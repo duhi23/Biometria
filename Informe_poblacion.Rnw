@@ -33,8 +33,8 @@
 a la Biometría} \\ [\baselineskip]
 {\itshape Máster Universitario en Ciencias Actuariales y Financieras}\\[40mm]
 {\Large Diego Huaraca}\\
+{\Large David Ortiz Muñoz}\\
 {\Large David Palán}\\
-{\Large David Ortiz}\\
 \vfill
 \begin{center}
 {\scshape Alcalá de Henares}\\
@@ -53,8 +53,16 @@ a la Biometría} \\ [\baselineskip]
 \newpage
 
 \section{Introducción a la Demografía}
+El siguiente trabajo tiene como propósito analizar la evolución poblacional que ha presentado la comunidad de Alicante respecto al crecimiento de la población total española en el periodo 1900 a 2011. La informacion empleada en el análisis corresponde a los censos realizados por Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}} desde el año 1900 al 2011. Con los datos recogidos se hizo el cálculo de los siguientes cálculos:
 
-
+\begin{itemize}
+\item\textbf{Crecimiento absoluto:} Diferencia entre la población entre un instante dado y una fecha anterior.
+\item\textbf{Crecimiento relativo:} Crecimiento de la población en tanto por cien.
+\item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
+\item\textbf{Tasa de crecimiento:} Para dos poblaciones $P_0$ y $P_1$ de dos años consecutivos tal que $P_1=P_0\cdot(1+r)$, suponiendo un crecimiento geométrico,$r$ es la tasa de crecimiento.
+\item\textbf{Tasa de crecimiento acumulativo anual:} Para dos poblaciones $P_t$ y $P_{t+n}$, tal que $P_{t+n}=P_t\cdot(1+r)^n$ donde $r$ es la tasa de crecimiento acumulativo anual suponiendo un crecimiento geométrico y puede obtenerse mediante la expresión $r=(\frac{p_{t+n}}{P_t})^{\frac{1}{n}}-1$.
+\item \textbf{Tasa de crecimiento instantáneo:}
+\end{itemize}
 
 
 
