@@ -434,13 +434,30 @@ ggplot(datos, aes(Año, Acu_España)) + geom_bar(stat = "identity", fill="lightb
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Ins_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Instantáneo") + scale_y_continuous(breaks=seq(0,2.4,0.005))
+ggplot(datos, aes(Año, Ins_Alicante)) + geom_line() + xlab("Año") + ylab("Crecimiento Instantáneo") + scale_y_continuous(breaks=seq(0,2.4,0.005))
 @
 \end{multicols}
 \end{itemize}
 
-
-
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|p{3cm}|}\hline
+\multirow{1}{*} {\bf Edad} & {\bf Total} & {\bf Hombres}
+& {\bf Mujeres}&{\bf Edad} & {\bf Total} & {\bf Hombres}
+& {\bf Mujeres}\\ \hline
+0-4& 82.594&	42.576&	40.018&	55-59&	119.830&	58.651&	61.179\\ \hline
+05-09&	98.707&	50.835&	47.872&	60-64&	104.205&	50.249&	53.956\\ \hline
+10-14&	94.532&	48.618&	45.914&	65-69&	102.265&	48.801&	53.464\\ \hline
+15-19&	88.411&	45.434&	42.977&	70-74&	86.217&	41.190&	45.027\\ \hline
+20-24&	91.805&	46.961&	44.844&	75-79&	67.524&	31.199&	36.325\\ \hline
+25-29&	101.943&	51.446&	50.497&	80-84&	50.762&	21.745&	29.017\\ \hline
+30-34&	121.031&	60.981&	60.050&	85-89&	29.471&	10.895&	18.576\\ \hline
+35-39&	151.213&	77.795&	73.418&	90-94&	11.249&	3.466&	7.783\\ \hline
+40-44&	152.255&	78.513&	73.742&	95-99&	2.307&	604&	1.703\\ \hline
+45-49&	144.854&	73.564&	71.290&	100 ó más años&	398&	96&	302\\ \hline
+50-54&	134.886&	67.554&	67.332&	TOTAL&	1.836.459&	911.173&	925.286\\ \hline
+\end{tabular}
+\end{table}
 
 
 
