@@ -56,8 +56,8 @@ a la Biometría} \\ [\baselineskip]
 El siguiente trabajo tiene como propósito analizar la evolución poblacional que ha presentado la comunidad de Alicante respecto al crecimiento de la población total española en el periodo 1900 a 2011. La informacion empleada en el análisis corresponde a los censos realizados por Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}} desde el año 1900 al 2011. Con los datos recogidos se hizo el cálculo de los siguientes cálculos:
 
 <<echo=FALSE>>=
-library(readxl)
-library(ggplot2)
+suppressWarnings(library(readxl))
+suppressWarnings(library(ggplot2))
 datos <- read_excel("datos_poblacion.xlsx", sheet = 1)
 save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 @
@@ -98,14 +98,13 @@ Un valor positivo $C_i$ como resultado señalaría que la cantidad de población
 <<echo=FALSE>>=
 load("datos.RData")
 ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,500000))
-      
-      
 @
-
 \end{multicols}
 
 
-\item\textbf{Crecimiento relativo:} Crecimiento de la población en tanto por cien.
+\item\textbf{Crecimiento relativo:} Con la finalidad de eliminar el efecto de la magnitud existente en grandes poblaciones, recurrimos al cálculo de la proporción del crecimiento o al porcentaje de crecimiento. La intensidad se expresará  por la relación existente  entre la población final y  la población inicial
+
+Crecimiento de la población en tanto por cien.
 
 
 
