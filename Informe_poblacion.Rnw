@@ -65,14 +65,14 @@ save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 
 \begin{itemize}
 \item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}).
-\[C_i=P_i-P_{i-1}\]
+\[Ca_i=P_i-P_{i-1}\]
 donde:
 \begin{itemize}
       \item $P_i$: Población en el instante {\small $i\in \{ 1900,1910,1920,\ldots\ldots,1990,2001,2011\}$}.
-      \item $C_i$: Crecimiento demográfico total en el año $i$
+      \item $Ca_i$: Crecimiento demográfico total en el año $i$
 \end{itemize}
 
-Un valor positivo $C_i$ como resultado señalaría que la cantidad de población aumentó en el período determinado. Una cifra negativa indicaría que la población disminuyó en el lapso analizado. En ambos casos, se habla de crecimiento o incremento de la población, pudiendo ser éste positivo o negativo.
+Un valor positivo $Ca_i$ como resultado señalaría que la cantidad de población aumentó en el período determinado. Una cifra negativa indicaría que la población disminuyó en el lapso analizado. En ambos casos, se habla de crecimiento o incremento de la población, pudiendo ser éste positivo o negativo.
 
 \begin{multicols}{2}
 \begin{table}[H]
@@ -102,13 +102,24 @@ ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightb
 \end{multicols}
 
 
-\item\textbf{Crecimiento relativo:} Con la finalidad de eliminar el efecto de la magnitud existente en grandes poblaciones, recurrimos al cálculo de la proporción del crecimiento o al porcentaje de crecimiento. La intensidad se expresará  por la relación existente  entre la población final y  la población inicial
+\item\textbf{Crecimiento relativo:} Con la finalidad de eliminar el efecto de la magnitud existente en grandes poblaciones, recurrimos al cálculo de la proporción del crecimiento. Su calculo se realiza de la siguiente manera:
+\[Cr_i=\frac{P_i-P_{i-1}}{P_i}\]
+donde:
+\begin{itemize}
+      \item $P_i$: Población en el instante {\small $i\in \{ 1900,1910,1920,\ldots\ldots,1990,2001,2011\}$}.
+      \item $Cr_i$: Crecimiento relativo en el año $i$
+\end{itemize}
 
-Crecimiento de la población en tanto por cien.
+Una cifra negativa de $Cr_i$ implicaría una población menos numerosa en el momento final que en el momento inicial.
+
+
 
 
 
 \item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
+
+
+
 \item\textbf{Tasa de crecimiento:} Para dos poblaciones $P_0$ y $P_1$ de dos años consecutivos tal que $P_1=P_0\cdot(1+r)$, suponiendo un crecimiento geométrico,$r$ es la tasa de crecimiento.
 \item\textbf{Tasa de crecimiento acumulativo anual:} Para dos poblaciones $P_t$ y $P_{t+n}$, tal que $P_{t+n}=P_t\cdot(1+r)^n$ donde $r$ es la tasa de crecimiento acumulativo anual suponiendo un crecimiento geométrico y puede obtenerse mediante la expresión $r=(\frac{p_{t+n}}{P_t})^{\frac{1}{n}}-1$.
 \item \textbf{Tasa de crecimiento instantáneo:}
