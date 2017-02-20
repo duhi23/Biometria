@@ -64,7 +64,7 @@ save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 
 
 \begin{itemize}
-\item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}).
+\item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}). Su calculo se realiza de la siguiente manera:
 \[Ca_i=P_i-P_{i-1}\]
 donde:
 \begin{itemize}
@@ -97,7 +97,7 @@ Un valor positivo $Ca_i$ como resultado señalaría que la cantidad de població
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,500000))
+ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,1500000))
 @
 \end{multicols}
 
@@ -126,7 +126,7 @@ ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightb
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Abs_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,400000,50000))
+ggplot(datos, aes(Año, Abs_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,400000,80000))
 @
 \end{multicols}
 
@@ -142,8 +142,7 @@ donde:
 Una cifra negativa de $Cr_i$ implicaría una población menos numerosa en el momento final que en el momento inicial.
 
 
-<<<<<<< HEAD
-=======
+
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
@@ -167,7 +166,7 @@ Una cifra negativa de $Cr_i$ implicaría una población menos numerosa en el mom
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Rel_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.15,0.01))
+ggplot(datos, aes(Año, Rel_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.15,0.03))
 @
 \end{multicols}
 \newpage
@@ -195,17 +194,15 @@ ggplot(datos, aes(Año, Rel_España)) + geom_bar(stat = "identity", fill="lightb
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.30,0.05))
+ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.30,0.06))
 @
 \end{multicols}
->>>>>>> af9512047a545b08b11f4d6f767f5aca400c2acc
 
 
 
 \item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
 
-<<<<<<< HEAD
-=======
+
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
@@ -230,7 +227,7 @@ ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="light
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Ind_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,350,50))
+ggplot(datos, aes(Año, Ind_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,300,50))
 @
 \end{multicols}
 
@@ -258,11 +255,10 @@ ggplot(datos, aes(Año, Ind_España)) + geom_bar(stat = "identity", fill="lightb
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Ind_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,400,50))
+ggplot(datos, aes(Año, Ind_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,400,80))
 @
 \end{multicols}
 
->>>>>>> af9512047a545b08b11f4d6f767f5aca400c2acc
 
 
 \item\textbf{Tasa de crecimiento:} Para dos poblaciones $P_0$ y $P_1$ de dos años consecutivos tal que $P_1=P_0\cdot(1+r)$, suponiendo un crecimiento geométrico,$r$ es la tasa de crecimiento.
