@@ -53,6 +53,7 @@ a la Biometría} \\ [\baselineskip]
 \newpage
 
 \section{Introducción a la Demografía}
+
 El siguiente trabajo tiene como propósito analizar la evolución poblacional que ha presentado la comunidad de Alicante respecto al crecimiento de la población total española en el periodo 1900 a 2011. La informacion empleada en el análisis corresponde a los censos realizados por Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}} desde el año 1900 al 2011. Con los datos recogidos se hizo el cálculo de los siguientes cálculos:
 
 <<echo=FALSE>>=
@@ -200,7 +201,13 @@ ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="light
 
 
 
-\item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
+\item\textbf{Número de índices:} Representa el crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
+\[N_i=\frac{P_i}{P_0}*100\%\]
+donde:
+\begin{itemize}
+      \item $P_i$: Población en el instante {\small $i\in \{ 1900,1910,1920,\ldots\ldots,1990,2001,2011\}$}.
+      \item $P_0$: Población inicial correspondiente al censo de $1990$.
+\end{itemize}
 
 
 \begin{multicols}{2}
