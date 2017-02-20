@@ -14,7 +14,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{lipsum}
-\usepackage{multicol}
+\usepackage{multicol, multirow}
 \usepackage{float}
 \usepackage{lmodern}
 \usepackage{epstopdf}
@@ -32,8 +32,8 @@
 {\Huge\scshape Introducción  \\[5mm]
 a la Biometría} \\ [\baselineskip]
 {\itshape Máster Universitario en Ciencias Actuariales y Financieras}\\[40mm]
-{\Large Diego Huaraca}\\
-{\Large David Ortiz Muñoz}\\
+{\Large Diego Huaraca}\\[3mm]
+{\Large David Ortiz Muñoz}\\[3mm]
 {\Large David Palán}\\
 \vfill
 \begin{center}
@@ -55,9 +55,60 @@ a la Biometría} \\ [\baselineskip]
 \section{Introducción a la Demografía}
 El siguiente trabajo tiene como propósito analizar la evolución poblacional que ha presentado la comunidad de Alicante respecto al crecimiento de la población total española en el periodo 1900 a 2011. La informacion empleada en el análisis corresponde a los censos realizados por Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}} desde el año 1900 al 2011. Con los datos recogidos se hizo el cálculo de los siguientes cálculos:
 
+<<echo=FALSE>>=
+library(readxl)
+library(ggplot2)
+datos <- read_excel("datos_poblacion.xlsx", sheet = 1)
+save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
+@
+
+
 \begin{itemize}
-\item\textbf{Crecimiento absoluto:} Diferencia entre la población entre un instante dado y una fecha anterior.
+\item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}).
+\[C_i=P_i-P_{i-1}\]
+donde:
+\begin{itemize}
+      \item $P_i$: Población en el instante {\small $i\in \{ 1900,1910,1920,\ldots\ldots,1990,2001,2011\}$}.
+      \item $C_i$: Crecimiento demográfico total en el año $i$
+\end{itemize}
+
+Un valor positivo $C_i$ como resultado señalaría que la cantidad de población aumentó en el período determinado. Una cifra negativa indicaría que la población disminuyó en el lapso analizado. En ambos casos, se habla de crecimiento o incremento de la población, pudiendo ser éste positivo o negativo.
+
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
+& {\bf España} & {\bf Absoluto} \\ \hline
+1900	& 18616630	& -\\ \hline
+1910	& 19990669	& 1374039\\ \hline
+1920	& 21388551	& 1397882\\ \hline
+1930	& 23677095	& 2288544\\ \hline
+1940	& 26014278	& 2337183\\ \hline
+1950	& 28117873	& 2103595\\ \hline
+1960	& 30582936	& 2465063\\ \hline
+1970	& 33956047	& 3373111\\ \hline
+1981	& 37742561	& 3786514\\ \hline
+1991	& 39433942	& 1691381\\ \hline
+2001	& 40847371	& 1413429\\ \hline
+2011	& 46815916	& 5968545\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,500000))
+      
+      
+@
+
+\end{multicols}
+
+
 \item\textbf{Crecimiento relativo:} Crecimiento de la población en tanto por cien.
+
+
+
 \item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
 \item\textbf{Tasa de crecimiento:} Para dos poblaciones $P_0$ y $P_1$ de dos años consecutivos tal que $P_1=P_0\cdot(1+r)$, suponiendo un crecimiento geométrico,$r$ es la tasa de crecimiento.
 \item\textbf{Tasa de crecimiento acumulativo anual:} Para dos poblaciones $P_t$ y $P_{t+n}$, tal que $P_{t+n}=P_t\cdot(1+r)^n$ donde $r$ es la tasa de crecimiento acumulativo anual suponiendo un crecimiento geométrico y puede obtenerse mediante la expresión $r=(\frac{p_{t+n}}{P_t})^{\frac{1}{n}}-1$.
