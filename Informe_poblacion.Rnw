@@ -101,6 +101,35 @@ ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightb
 @
 \end{multicols}
 
+\newpage
+
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
+& {\bf Alicante} & {\bf Absoluto} \\ \hline
+1900	& 470149	& -\\ \hline
+1910	& 497616	& 27467\\ \hline
+1920	& 512186	& 14570\\ \hline
+1930	& 545838	& 33652\\ \hline
+1940	& 607562	& 61724\\ \hline
+1950	& 634065	& 26503\\ \hline
+1960	& 711942	& 77877\\ \hline
+1970	& 920105	& 208163\\ \hline
+1981	& 1148597	& 228492\\ \hline
+1991	& 1334545	& 185948\\ \hline
+2001	& 1461925	& 127380\\ \hline
+2011	& 1852166	& 390241\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Abs_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,400000,50000))
+@
+\end{multicols}
+
 
 \item\textbf{Crecimiento relativo:} Con la finalidad de eliminar el efecto de la magnitud existente en grandes poblaciones, recurrimos al cálculo de la proporción del crecimiento. Su calculo se realiza de la siguiente manera:
 \[Cr_i=\frac{P_i-P_{i-1}}{P_i}\]
@@ -113,11 +142,127 @@ donde:
 Una cifra negativa de $Cr_i$ implicaría una población menos numerosa en el momento final que en el momento inicial.
 
 
+<<<<<<< HEAD
+=======
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
+& {\bf España} & {\bf Relativo} \\ \hline
+1900	& 18616630	& -\\ \hline
+1910	& 19990669	& 7.4\%\\ \hline
+1920	& 21388551	& 7.0\%\\ \hline
+1930	& 23677095	& 10.7\%\\ \hline
+1940	& 26014278	& 9.9\%\\ \hline
+1950	& 28117873	& 8.1\%\\ \hline
+1960	& 30582936	& 8.8\%\\ \hline
+1970	& 33956047	& 11.0\%\\ \hline
+1981	& 37742561	& 11.2\%\\ \hline
+1991	& 39433942	& 4.5\%\\ \hline
+2001	& 40847371	& 3.6 \%\\ \hline
+2011	& 46815916	& 14.6\%\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Rel_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.15,0.01))
+@
+\end{multicols}
+\newpage
+
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
+& {\bf Alicante} & {\bf Relativo} \\ \hline
+1900	& 470149	& -\\ \hline
+1910	& 497616	& 5.8\%\\ \hline
+1920	& 512186	& 2.9\%\\ \hline
+1930	& 545838	& 6.6\%\\ \hline
+1940	& 607562	& 11.3\%\\ \hline
+1950	& 634065	& 4.4\%\\ \hline
+1960	& 711942	& 12.3\%\\ \hline
+1970	& 920105	& 29.2\%\\ \hline
+1981	& 1148597	& 24.8\%\\ \hline
+1991	& 1334545	& 16.2\%\\ \hline
+2001	& 1461925	& 9.5\%\\ \hline
+2011	& 1852166	& 26.7\%\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.30,0.05))
+@
+\end{multicols}
+>>>>>>> af9512047a545b08b11f4d6f767f5aca400c2acc
 
 
 
 \item\textbf{Número de índices:} Crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
 
+<<<<<<< HEAD
+=======
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Número}\\
+& {\bf España} & {\bf Índices} \\ \hline
+1900	& 18616630	& 100.00\%\\ \hline
+1910	& 19990669	& 107.38\%\\ \hline
+1920	& 21388551	& 114.89\%\\ \hline
+1930	& 23677095	& 127.18\%\\ \hline
+1940	& 26014278	& 139.74\%\\ \hline
+1950	& 28117873	& 151.04\%\\ \hline
+1960	& 30582936	& 164.28\%\\ \hline
+1970	& 33956047	& 182.40\%\\ \hline
+1981	& 37742561	& 202.74\%\\ \hline
+1991	& 39433942	& 211.82\%\\ \hline
+2001	& 40847371	& 219.41\%\\ \hline
+2011	& 46815916	& 251.47\%\\ \hline
+\end{tabular}
+
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Ind_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,350,50))
+@
+\end{multicols}
+
+\newpage
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Número}\\
+& {\bf Alicante} & {\bf Índices} \\ \hline
+1900	& 470149	& 100\%\\ \hline
+1910	& 497616	& 105.84\%\\ \hline
+1920	& 512186	& 108.94\%\\ \hline
+1930	& 545838	& 116.10\%\\ \hline
+1940	& 607562	& 129.23\%\\ \hline
+1950	& 634065	& 134.86\%\\ \hline
+1960	& 711942	& 151.43\%\\ \hline
+1970	& 920105	& 195.70\%\\ \hline
+1981	& 1148597	& 244.30\%\\ \hline
+1991	& 1334545	& 283.86\%\\ \hline
+2001	& 1461925	& 310.95\%\\ \hline
+2011	& 1852166	& 393.95\%\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(Año, Ind_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,400,50))
+@
+\end{multicols}
+
+>>>>>>> af9512047a545b08b11f4d6f767f5aca400c2acc
 
 
 \item\textbf{Tasa de crecimiento:} Para dos poblaciones $P_0$ y $P_1$ de dos años consecutivos tal que $P_1=P_0\cdot(1+r)$, suponiendo un crecimiento geométrico,$r$ es la tasa de crecimiento.
