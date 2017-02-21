@@ -46,7 +46,7 @@ a la Biometría} \\ [\baselineskip]
 
 
 \begin{document}
-\titleBOOK
+%\titleBOOK
 \newpage
 
 \tableofcontents
@@ -63,6 +63,34 @@ datos <- read_excel("datos_poblacion.xlsx", sheet = 1)
 save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 @
 
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Población Total}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& 18616630	& 470149\\ \hline
+1910	& 19990669	& 497616\\ \hline
+1920	& 21388551	& 512186\\ \hline
+1930	& 23677095	& 545838\\ \hline
+1940	& 26014278	& 607562\\ \hline
+1950	& 28117873	& 634065\\ \hline
+1960	& 30582936	& 711942\\ \hline
+1970	& 33956047	& 920105\\ \hline
+1981	& 37742561	& 1148597\\ \hline
+1991	& 39433942	& 1334545\\ \hline
+2001	& 40847371	& 1461925\\ \hline
+2011	& 46815916	& 1852166\\ \hline
+\end{tabular}
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(x=Año, y=Poblacion, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Población") + scale_y_continuous(breaks=seq(0,48000000,8000000))
+@
+\end{multicols}
+
+\newpage
 
 \begin{itemize}
 \item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}). Su calculo se realiza de la siguiente manera:
@@ -78,59 +106,31 @@ Un valor positivo $Ca_i$ como resultado señalaría que la cantidad de població
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf España} & {\bf Absoluto} \\ \hline
-1900	& 18616630	& -\\ \hline
-1910	& 19990669	& 1374039\\ \hline
-1920	& 21388551	& 1397882\\ \hline
-1930	& 23677095	& 2288544\\ \hline
-1940	& 26014278	& 2337183\\ \hline
-1950	& 28117873	& 2103595\\ \hline
-1960	& 30582936	& 2465063\\ \hline
-1970	& 33956047	& 3373111\\ \hline
-1981	& 37742561	& 3786514\\ \hline
-1991	& 39433942	& 1691381\\ \hline
-2001	& 40847371	& 1413429\\ \hline
-2011	& 46815916	& 5968545\\ \hline
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Crecimiento Absoluto}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& -	& - \\ \hline
+1910	& 1374039	& 27467\\ \hline
+1920	& 1397882	& 14570\\ \hline
+1930	& 2288544	& 33652\\ \hline
+1940	& 2337183	& 61724\\ \hline
+1950	& 2103595	& 26503\\ \hline
+1960	& 2465063	& 77877\\ \hline
+1970	& 3373111	& 208163\\ \hline
+1981	& 3786514	& 228492\\ \hline
+1991	& 1691381	& 185948\\ \hline
+2001	& 1413429	& 127380\\ \hline
+2011	& 5968545	& 390241\\ \hline
 \end{tabular}
 \end{table}
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Abs_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,1500000))
+ggplot(datos, aes(x=Año, y=Crec_absoluto, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,1500000))
 @
 \end{multicols}
 
 \newpage
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf Alicante} & {\bf Absoluto} \\ \hline
-1900	& 470149	& -\\ \hline
-1910	& 497616	& 27467\\ \hline
-1920	& 512186	& 14570\\ \hline
-1930	& 545838	& 33652\\ \hline
-1940	& 607562	& 61724\\ \hline
-1950	& 634065	& 26503\\ \hline
-1960	& 711942	& 77877\\ \hline
-1970	& 920105	& 208163\\ \hline
-1981	& 1148597	& 228492\\ \hline
-1991	& 1334545	& 185948\\ \hline
-2001	& 1461925	& 127380\\ \hline
-2011	& 1852166	& 390241\\ \hline
-\end{tabular}
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Abs_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,400000,80000))
-@
-\end{multicols}
-
 
 \item\textbf{Crecimiento relativo:} Con la finalidad de eliminar el efecto de la magnitud existente en grandes poblaciones, recurrimos al cálculo de la proporción del crecimiento. Su calculo se realiza de la siguiente manera:
 \[Cr_i=\frac{P_i-P_{i-1}}{P_i}\]
@@ -143,63 +143,34 @@ donde:
 Una cifra negativa de $Cr_i$ implicaría una población menos numerosa en el momento final que en el momento inicial.
 
 
-
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf España} & {\bf Relativo} \\ \hline
-1900	& 18616630	& -\\ \hline
-1910	& 19990669	& 7.4\%\\ \hline
-1920	& 21388551	& 7.0\%\\ \hline
-1930	& 23677095	& 10.7\%\\ \hline
-1940	& 26014278	& 9.9\%\\ \hline
-1950	& 28117873	& 8.1\%\\ \hline
-1960	& 30582936	& 8.8\%\\ \hline
-1970	& 33956047	& 11.0\%\\ \hline
-1981	& 37742561	& 11.2\%\\ \hline
-1991	& 39433942	& 4.5\%\\ \hline
-2001	& 40847371	& 3.6 \%\\ \hline
-2011	& 46815916	& 14.6\%\\ \hline
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Crecimiento Relativo}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& - & - \\ \hline	
+1910	& 7,38\%	& 5,84\%\\ \hline
+1920	& 6,99\%	& 2,93\%\\ \hline
+1930	& 10,70\%	& 6,57\%\\ \hline
+1940	& 9,87\%	& 11,31\%\\ \hline
+1950	& 8,09\%	& 4,36\%\\ \hline
+1960	& 8,77\%	& 12,28\%\\ \hline
+1970	& 11,03\%	& 29,24\%\\ \hline
+1981	& 11,15\%	& 24,83\%\\ \hline
+1991	& 4,48\%	& 16,19\%\\ \hline
+2001	& 3,58\%	& 9,54\%\\ \hline
+2011	& 14,61\%	& 26,69\%\\ \hline
 \end{tabular}
 \end{table}
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Rel_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.15,0.03))
+ggplot(datos, aes(x=Año, y=Crec_relativo, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.3,0.06))
 @
 \end{multicols}
+
 \newpage
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf Alicante} & {\bf Relativo} \\ \hline
-1900	& 470149	& -\\ \hline
-1910	& 497616	& 5.8\%\\ \hline
-1920	& 512186	& 2.9\%\\ \hline
-1930	& 545838	& 6.6\%\\ \hline
-1940	& 607562	& 11.3\%\\ \hline
-1950	& 634065	& 4.4\%\\ \hline
-1960	& 711942	& 12.3\%\\ \hline
-1970	& 920105	& 29.2\%\\ \hline
-1981	& 1148597	& 24.8\%\\ \hline
-1991	& 1334545	& 16.2\%\\ \hline
-2001	& 1461925	& 9.5\%\\ \hline
-2011	& 1852166	& 26.7\%\\ \hline
-\end{tabular}
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Rel_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Relativo") + scale_y_continuous(breaks=seq(0,0.30,0.06))
-@
-\end{multicols}
-
-
 
 \item\textbf{Número de índices:} Representa el crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
 \[N_i=\frac{P_i}{P_0}*100\%\]
@@ -213,238 +184,136 @@ donde:
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Número}\\
-& {\bf España} & {\bf Índices} \\ \hline
-1900	& 18616630	& 100.00\%\\ \hline
-1910	& 19990669	& 107.38\%\\ \hline
-1920	& 21388551	& 114.89\%\\ \hline
-1930	& 23677095	& 127.18\%\\ \hline
-1940	& 26014278	& 139.74\%\\ \hline
-1950	& 28117873	& 151.04\%\\ \hline
-1960	& 30582936	& 164.28\%\\ \hline
-1970	& 33956047	& 182.40\%\\ \hline
-1981	& 37742561	& 202.74\%\\ \hline
-1991	& 39433942	& 211.82\%\\ \hline
-2001	& 40847371	& 219.41\%\\ \hline
-2011	& 46815916	& 251.47\%\\ \hline
-\end{tabular}
-
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Ind_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,300,50))
-@
-\end{multicols}
-
-\newpage
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Número}\\
-& {\bf Alicante} & {\bf Índices} \\ \hline
-1900	& 470149	& 100\%\\ \hline
-1910	& 497616	& 105.84\%\\ \hline
-1920	& 512186	& 108.94\%\\ \hline
-1930	& 545838	& 116.10\%\\ \hline
-1940	& 607562	& 129.23\%\\ \hline
-1950	& 634065	& 134.86\%\\ \hline
-1960	& 711942	& 151.43\%\\ \hline
-1970	& 920105	& 195.70\%\\ \hline
-1981	& 1148597	& 244.30\%\\ \hline
-1991	& 1334545	& 283.86\%\\ \hline
-2001	& 1461925	& 310.95\%\\ \hline
-2011	& 1852166	& 393.95\%\\ \hline
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Número de índices}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& 100,00	& 100,00\\ \hline
+1910	& 107,38	& 105,84\\ \hline
+1920	& 114,89	& 108,94\\ \hline
+1930	& 127,18	& 116,10\\ \hline
+1940	& 139,74	& 129,23\\ \hline
+1950	& 151,04	& 134,86\\ \hline
+1960	& 164,28	& 151,43\\ \hline
+1970	& 182,40	& 195,70\\ \hline
+1981	& 202,74	& 244,30\\ \hline
+1991	& 211,82	& 283,86\\ \hline
+2001	& 219,41	& 310,95\\ \hline
+2011	& 251,47	& 393,95\\ \hline
 \end{tabular}
 \end{table}
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Ind_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Número de Índices") + scale_y_continuous(breaks=seq(0,400,80))
+ggplot(datos, aes(x=Año, y=Indice, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Número de Indices") + scale_y_continuous(breaks=seq(0,400,80))
 @
 \end{multicols}
 
 
 
-\item\textbf{Tasa de crecimiento Bruto:} 
+
+\item\textbf{Tasa de crecimiento bruta:}
 
 \begin{multicols}{2}
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf España} & {\bf Bruto} \\ \hline
-1900	& 18616630	& -\\ \hline
-1910	& 19990669	& 0.71\%\\ \hline
-1920	& 21388551	& 0.68\%\\ \hline
-1930	& 23677095	& 1.02\%\\ \hline
-1940	& 26014278	& 0.94\%\\ \hline
-1950	& 28117873	& 0.78\%\\ \hline
-1960	& 30582936	& 0.84\%\\ \hline
-1970	& 33956047	& 1.05\%\\ \hline
-1981	& 37742561	& 1.04\%\\ \hline
-1991	& 39433942	& 0.44\%\\ \hline
-2001	& 40847371	& 0.33\%\\ \hline
-2011	& 46815916	& 1.36\%\\ \hline
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Tasa de Crecimiento Bruta}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& - & - \\ \hline	
+1910	& 0,71\%	& 0,57\%\\ \hline
+1920	& 0,68\%	& 0,29\%\\ \hline
+1930	& 1,02\%	& 0,64\%\\ \hline
+1940	& 0,94\%	& 1,07\%\\ \hline
+1950	& 0,78\%	& 0,43\%\\ \hline
+1960	& 0,84\%	& 1,16\%\\ \hline
+1970	& 1,05\%	& 2,55\%\\ \hline
+1981	& 1,04\%	& 2,17\%\\ \hline
+1991	& 0,44\%	& 1,50\%\\ \hline
+2001	& 0,33\%	& 0,85\%\\ \hline
+2011	& 1,36\%	& 2,36\%\\ \hline
 \end{tabular}
 
 \end{table}
 
 <<echo=FALSE>>=
 load("datos.RData")
-ggplot(datos, aes(Año, Bru_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Bruto") + scale_y_continuous(breaks=seq(0,1.36,0.001))
+ggplot(datos, aes(x=Año, y=Crec_bruto, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Tasa de Crecimiento Bruto") + scale_y_continuous(breaks=seq(0,0.03,0.008))
 @
 \end{multicols}
 
-\newpage
 
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf Alicante} & {\bf Bruto} \\ \hline
-1900	& 470149	& -\\ \hline
-1910	& 497616	& 0.57\%\\ \hline
-1920	& 512186	& 0.29\%\\ \hline
-1930	& 545838	& 0.64\%\\ \hline
-1940	& 607562	& 1.07\%\\ \hline
-1950	& 634065	& 0.43\%\\ \hline
-1960	& 711942	& 1.16\%\\ \hline
-1970	& 920105	& 2.55\%\\ \hline
-1981	& 1148597	& 2.17\%\\ \hline
-1991	& 1334545	& 1.50\%\\ \hline
-2001	& 1461925	& 0.85\%\\ \hline
-2011	& 1852166	& 2.36\%\\ \hline
-\end{tabular}
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Bru_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Bruto") + scale_y_continuous(breaks=seq(0,2.4,0.005))
-@
-\end{multicols}
-
-\item\textbf{Tasa de crecimiento acumulativo anual:} Para dos poblaciones $P_t$ y $P_{t+n}$, tal que $P_{t+n}=P_t\cdot(1+r)^n$ donde $r$ es la tasa de crecimiento acumulativo anual suponiendo un crecimiento geométrico y puede obtenerse mediante la expresión $r=(\frac{p_{t+n}}{P_t})^{\frac{1}{n}}-1$.
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf España} & {\bf Acumulativo} \\ \hline
-1900	& 18616630	& -\\ \hline
-1910	& 19990669	& 0.71\%\\ \hline
-1920	& 21388551	& 0.68\%\\ \hline
-1930	& 23677095	& 1.02\%\\ \hline
-1940	& 26014278	& 0.95\%\\ \hline
-1950	& 28117873	& 0.78\%\\ \hline
-1960	& 30582936	& 0.84\%\\ \hline
-1970	& 33956047	& 1.05\%\\ \hline
-1981	& 37742561	& 1.05\%\\ \hline
-1991	& 39433942	& 0.44\%\\ \hline
-2001	& 40847371	& 0.33\%\\ \hline
-2011	& 46815916	& 1.37\%\\ \hline
-\end{tabular}
-
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Acu_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Acumulativo") + scale_y_continuous(breaks=seq(0,1.36,0.001))
-@
-\end{multicols}
-
-\newpage
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf Alicante} & {\bf Acumulativo} \\ \hline
-1900	& 470149	& -\\ \hline
-1910	& 497616	& 0.57\%\\ \hline
-1920	& 512186	& 0.29\%\\ \hline
-1930	& 545838	& 0.64\%\\ \hline
-1940	& 607562	& 1.08\%\\ \hline
-1950	& 634065	& 0.43\%\\ \hline
-1960	& 711942	& 1.17\%\\ \hline
-1970	& 920105	& 2.60\%\\ \hline
-1981	& 1148597	& 2.21\%\\ \hline
-1991	& 1334545	& 1.51\%\\ \hline
-2001	& 1461925	& 0.86\%\\ \hline
-2011	& 1852166	& 2.39\%\\ \hline
-\end{tabular}
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Acu_Alicante)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Acumulativo") + scale_y_continuous(breaks=seq(0,2.4,0.005))
-@
-\end{multicols}
-
-\item \textbf{Tasa de crecimiento instantáneo:}
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf España} & {\bf Instantáneo} \\ \hline
-1900	& 18616630	& -\\ \hline
-1910	& 19990669	& 0.71\%\\ \hline
-1920	& 21388551	& 0.68\%\\ \hline
-1930	& 23677095	& 1.02\%\\ \hline
-1940	& 26014278	& 0.94\%\\ \hline
-1950	& 28117873	& 0.78\%\\ \hline
-1960	& 30582936	& 0.84\%\\ \hline
-1970	& 33956047	& 1.05\%\\ \hline
-1981	& 37742561	& 1.04\%\\ \hline
-1991	& 39433942	& 0.44\%\\ \hline
-2001	& 40847371	& 0.33\%\\ \hline
-2011	& 46815916	& 1.36\%\\ \hline
-\end{tabular}
-
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Acu_España)) + geom_bar(stat = "identity", fill="lightblue", colour="black") + xlab("Año") + ylab("Crecimiento Instantáneo") + scale_y_continuous(breaks=seq(0,1.36,0.001))
-@
-\end{multicols}
-
-\newpage
-
-\begin{multicols}{2}
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
-\multirow{2}{*}{\bf Año} & {\bf Población} & {\bf Crecimiento}\\
-& {\bf Alicante} & {\bf Instantáneo} \\ \hline
-1900	& 470149	& -\\ \hline
-1910	& 497616	& 0.57\%\\ \hline
-1920	& 512186	& 0.29\%\\ \hline
-1930	& 545838	& 0.64\%\\ \hline 
-1940	& 607562	& 1.07\%\\ \hline
-1950	& 634065	& 0.43\%\\ \hline
-1960	& 711942	& 1.16\%\\ \hline
-1970	& 920105	& 2.56\%\\ \hline
-1981	& 1148597	& 2.18\%\\ \hline
-1991	& 1334545	& 1.50\%\\ \hline
-2001	& 1461925	& 0.85\%\\ \hline
-2011	& 1852166	& 2.37\%\\ \hline
-\end{tabular}
-\end{table}
-
-<<echo=FALSE>>=
-load("datos.RData")
-ggplot(datos, aes(Año, Ins_Alicante)) + geom_line() + xlab("Año") + ylab("Crecimiento Instantáneo") + scale_y_continuous(breaks=seq(0,2.4,0.005))
-@
-\end{multicols}
+\item\textbf{Tasa de crecimiento acumulativo anual:} Es una medida muy utilizada para medir y comparar crecimientos totales de la población. Su hipótesis se basa en un crecimiento acumulativo anual geométrico. Su calculo se obtiene de la siguiente manera:
+\[P_{t+n}=P_t\cdot(1+r)^n \]
+al despejar $r$, se obtiene la expresión:
+\[r=\left(\frac{P_{t+n}}{P_t}\right)^{\frac{1}{n}}-1\]
+donde:
+\begin{itemize}
+      \item $P_t$: Población correspondiente al instante $t$.
+      \item $P_{t+n}$: Población correspondiente al instante $t+n$.
+      \item $r$: Tasa de creimiento acumulativo anual.
 \end{itemize}
+
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}\hline
+\multicolumn{3}{|c|}{\bf Crecimiento acumulativo anual}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& - & - \\ \hline	
+1910	& 0,71\%	& 0,57\%\\ \hline
+1920	& 0,68\%	& 0,29\%\\ \hline
+1930	& 1,02\%	& 0,64\%\\ \hline
+1940	& 0,95\%	& 1,08\%\\ \hline
+1950	& 0,78\%	& 0,43\%\\ \hline
+1960	& 0,84\%	& 1,17\%\\ \hline
+1970	& 1,05\%	& 2,60\%\\ \hline
+1981	& 1,05\%	& 2,21\%\\ \hline
+1991	& 0,44\%	& 1,51\%\\ \hline
+2001	& 0,33\%	& 0,86\%\\ \hline
+2011	& 1,37\%	& 2,39\%\\ \hline
+\end{tabular}
+
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(x=Año, y=Crec_AcumA, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Acumulativo Anual") + scale_y_continuous(breaks=seq(0,0.03,0.008))
+@
+\end{multicols}
+
+
+\item \textbf{Tasa de crecimiento instantáneo:} Esta medida supone la hipótesis que la población crece a una tasa anual $r$, instantáneamente, de manera que los nuevos efectivos crecen a su vez sin esperar
+
+\begin{multicols}{2}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|p{3cm}|}\hline
+\multicolumn{3}{|c|}{\bf Crecimiento instantáneo}\\ \hline
+{\bf Año} & {\bf España} & {\bf Alicante}\\ \hline
+1900	& - & - \\ \hline	
+1910	& 0,71\%	& 0,57\%\\ \hline
+1920	& 0,68\%	& 0,29\%\\ \hline
+1930	& 1,02\%	& 0,64\%\\ \hline
+1940	& 0,94\%	& 1,07\%\\ \hline
+1950	& 0,78\%	& 0,43\%\\ \hline
+1960	& 0,84\%	& 1,16\%\\ \hline
+1970	& 1,05\%	& 2,56\%\\ \hline
+1981	& 1,04\%	& 2,18\%\\ \hline
+1991	& 0,44\%	& 1,50\%\\ \hline
+2001	& 0,33\%	& 0,85\%\\ \hline
+2011	& 1,36\%	& 2,37\%\\ \hline
+\end{tabular}
+
+\end{table}
+
+<<echo=FALSE>>=
+load("datos.RData")
+ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento instantáneo") + scale_y_continuous(breaks=seq(0,0.03,0.008))
+@
+\end{multicols}
+
+\end{itemize}
+
 
 \begin{table}[H]
 \centering
@@ -452,17 +321,17 @@ ggplot(datos, aes(Año, Ins_Alicante)) + geom_line() + xlab("Año") + ylab("Crec
 \multirow{1}{*} {\bf Edad} & {\bf Total} & {\bf Hombres}
 & {\bf Mujeres}&{\bf Edad} & {\bf Total} & {\bf Hombres}
 & {\bf Mujeres}\\ \hline
-0-4& 82.594&	42.576&	40.018&	55-59&	119.830&	58.651&	61.179\\ \hline
-05-09&	98.707&	50.835&	47.872&	60-64&	104.205&	50.249&	53.956\\ \hline
-10-14&	94.532&	48.618&	45.914&	65-69&	102.265&	48.801&	53.464\\ \hline
-15-19&	88.411&	45.434&	42.977&	70-74&	86.217&	41.190&	45.027\\ \hline
-20-24&	91.805&	46.961&	44.844&	75-79&	67.524&	31.199&	36.325\\ \hline
-25-29&	101.943&	51.446&	50.497&	80-84&	50.762&	21.745&	29.017\\ \hline
-30-34&	121.031&	60.981&	60.050&	85-89&	29.471&	10.895&	18.576\\ \hline
-35-39&	151.213&	77.795&	73.418&	90-94&	11.249&	3.466&	7.783\\ \hline
-40-44&	152.255&	78.513&	73.742&	95-99&	2.307&	604&	1.703\\ \hline
-45-49&	144.854&	73.564&	71.290&	100 ó más años&	398&	96&	302\\ \hline
-50-54&	134.886&	67.554&	67.332&	TOTAL&	1.836.459&	911.173&	925.286\\ \hline
+0-4 & 82.594 &	42.576 & 40.018 &	55-59 & 119.830 &	58.651 & 61.179\\ \hline
+05-09 & 98.707 &	50.835 & 47.872 &	60-64 & 104.205 &	50.249 & 53.956\\ \hline
+10-14 & 94.532 &	48.618 & 45.914 &	65-69 & 102.265 &	48.801 & 53.464\\ \hline
+15-19 & 88.411 &	45.434 & 42.977 &	70-74 & 86.217 &	41.190 & 45.027\\ \hline
+20-24 & 91.805 &	46.961 & 44.844 &	75-79 & 67.524 &	31.199 & 36.325\\ \hline
+25-29 & 101.943 &	51.446 & 50.497 &	80-84 & 50.762 &	21.745 & 29.017\\ \hline
+30-34 & 121.031 &	60.981 & 60.050 &	85-89 & 29.471 &	10.895 & 18.576\\ \hline
+35-39 & 151.213 &	77.795 & 73.418 &	90-94 & 11.249 &	3.466 & 7.783\\ \hline
+40-44 & 152.255 &	78.513 & 73.742 &	95-99 & 2.307 & 604 & 1.703\\ \hline
+45-49 & 144.854 &	73.564 & 71.290 &	100 ó más años & 398 &	96 &	302\\ \hline
+50-54 & 134.886 &	67.554 & 67.332 &	TOTAL & 1.836.459 & 911.173 &	925.286\\ \hline
 \end{tabular}
 \end{table}
 
