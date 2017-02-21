@@ -203,6 +203,10 @@ ggplot(datos, aes(x=Año, y=Crec_relativo, fill=Datos)) + geom_bar(stat="identit
 @
 \end{multicols}
 
+Los resultados ponen en evidencia valores positivos de crecimiento relativo, lo cual implica que la población es más numerosa respecto del instante de medición anterior.\newline
+
+Se evidencia además, que las tasas de crecimiento relativo en el periodo 1990 - 1940 presenta variaciones inferiores al $3\%$, sin embargo, para el periodo 1970 - 2011 dicha variación se incrementa notablemente siendo mayor la correspondiente a la Provincia de Alicante. Lo anterior, implica que se dio un aumento poblacional considerable en la provincia respecto al total de España.
+
 \newpage
 
 \item\textbf{Número de índices:} Representa el crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
