@@ -52,9 +52,32 @@ a la Biometría} \\ [\baselineskip]
 \tableofcontents
 \newpage
 
-\section{Introducción a la Demografía}
+\section{Análisis demográfico de la Provincia de Alicante}
 
-El siguiente trabajo tiene como propósito analizar la evolución poblacional que ha presentado la comunidad de Alicante respecto al crecimiento de la población total española en el periodo 1900 a 2011. La informacion empleada en el análisis corresponde a los censos realizados por Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}} desde el año 1900 al 2011. Con los datos recogidos se hizo el cálculo de los siguientes cálculos:
+La provincia española de Alicante se encuentra ubicada en el sureste de la península ibérica, es la menos extensa de la Comunidad Valenciana. Es la quinta provincia más poblada de España, además, es la quinta en densidad de población, siendo una de las provincias con mayor grado de urbanización.\newline
+
+Su capital lleva el mismo nombre de la provincia Alicante. Esta cuenta con 26 municipios de más de 20.000 habitantes. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{alicante.pdf}
+ \end{figure}
+La provincia de Alicante limita al oeste con las provincias de Murcia y Albacete, al norte con Valencia, al sur con Murcia y al este con el mar Mediterráneo.\newline
+
+Su población se encuentra distribuida de forma uniforme por todo el territorio provincial, presentando densidades de 50 hab/km$^2$ por comarca. Además existen zonas muy pobladas, con densidades superiores a los 400 hab/km$^2$ donde se concentra la población en núcleos urbanos de más de 20.000 habitantes.
+
+
+\subsection{Información utilizada en el análisis}
+
+El objetivo del presente trabajo es analizar los procesos y cambios demográficos experimentados por la población de la Provincia de Alicante, así como del total de la población Española.\newline
+
+El trabajo constará de tres partes, mismas que se detallan a continuación:
+\begin{enumerate}
+      \item En una primera parte estudiaremos el crecimiento poblacional experimentado durante el último siglo tanto de la Provincia como de España por medio de indicadores demográficos. Además, se presentará la piramide poblacional y se comentará las principales variaciones ocurridas en la población.
+      \item Posteriormente, se analizarán indicadores de mortalidad y se analizará el impacto que tiene sobre la Provincia, además se generará una tabla de mortalidad abreviada por género.
+      \item Finalmente, se pretende estudiar la fecundidad de la Provincia usando varias medidas y tasas. Concluiremos realizando una proyección de la población para el año 2020.
+\end{enumerate}
+
+Para el trabajo se empleada la información correspondiente al periodo entre 1900 y 2011, esta información sobre los censos poblacionales se encuentra disponible en el Instituto Nacional de Estadística \footnote{INE: \url{http://www.ine.es/inebmenu/mnu_cifraspob.htm#10}}.
 
 <<echo=FALSE>>=
 suppressWarnings(library(readxl))
@@ -65,7 +88,11 @@ datos2 <- read_excel("datos_poblacion.xlsx", sheet = 2)[,5:7]
 save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 @
 
-\begin{multicols}{2}
+
+\subsection{Población Alicante y España}
+
+La siguiente tabla muestra el total poblacional de la Provincia de Alicante y España, en base a la información censal obtenida.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}\hline
@@ -86,13 +113,14 @@ save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 \end{tabular}
 \end{table}
 
-<<echo=FALSE>>=
+<<echo=FALSE, fig.align='center', fig.height=5, fig.width=6.5>>=
 load("datos.RData")
 ggplot(datos, aes(x=Año, y=Poblacion, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Población") + scale_y_continuous(breaks=seq(0,48000000,8000000))
 @
-\end{multicols}
 
-\newpage
+
+
+\subsection{Principales indicadores}
 
 \begin{itemize}
 \item\textbf{Crecimiento absoluto:} Diferencia entre la población inicial y la población final de un periodo determinado (\emph{periodo intercensal}). Su calculo se realiza de la siguiente manera:
@@ -131,6 +159,11 @@ load("datos.RData")
 ggplot(datos, aes(x=Año, y=Crec_absoluto, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Absoluto") + scale_y_continuous(breaks=seq(0,6000000,1500000))
 @
 \end{multicols}
+
+Los resultados muestran que el crecimiento absoluto de la Provincia de Alicante y de España son positivos lo cual implica que la población ha aumentado durante los últimos 111 años.\newline
+
+Se evidencia que en el periodo 1990 - 1980 el crecimiento se da a un ritmo constante y positivo, sin embargo, para 1990 y 2001 existe un crecimiento reducido respecto de la tendencia que presentaba, pero posteriormente, el crecimiento se recupera de manera acelerada y positiva.
+
 
 \newpage
 
@@ -172,6 +205,10 @@ ggplot(datos, aes(x=Año, y=Crec_relativo, fill=Datos)) + geom_bar(stat="identit
 @
 \end{multicols}
 
+Los resultados ponen en evidencia valores positivos de crecimiento relativo, lo cual implica que la población es más numerosa respecto del instante de medición anterior.\newline
+
+Se evidencia además, que las tasas de crecimiento relativo en el periodo 1990 - 1940 presenta variaciones inferiores al $3\%$, sin embargo, para el periodo 1970 - 2011 dicha variación se incrementa notablemente siendo mayor la correspondiente a la Provincia de Alicante. Lo anterior, implica que se dio un aumento poblacional considerable en la provincia respecto al total de España.
+
 \newpage
 
 \item\textbf{Número de índices:} Representa el crecimiento relativo de la población con respecto a una base fija (población en un año determinado $P_0$).
@@ -211,9 +248,14 @@ ggplot(datos, aes(x=Año, y=Indice, fill=Datos)) + geom_bar(stat="identity", pos
 \end{multicols}
 
 
-
-
-\item\textbf{Tasa de crecimiento bruta:}
+\item\textbf{Tasa bruta de crecimiento:} Esta medida representa el cociente entre el crecimiento  absoluto anualizado y la población media:
+\[r=\frac{\frac{P_{t+n}-P_t}{n}}{\frac{P_{t+n}+P_t}{2}}\]
+donde:
+\begin{itemize}
+      \item $P_t$: Población correspondiente al instante $t$.
+      \item $P_{t+n}$: Población correspondiente al instante $t+n$.
+      \item $r$: Tasa bruta de crecimiento.
+\end{itemize}
 
 \begin{multicols}{2}
 \begin{table}[H]
@@ -252,7 +294,7 @@ donde:
 \begin{itemize}
       \item $P_t$: Población correspondiente al instante $t$.
       \item $P_{t+n}$: Población correspondiente al instante $t+n$.
-      \item $r$: Tasa de creimiento acumulativo anual.
+      \item $r$: Tasa de crecimiento acumulativo anual.
 \end{itemize}
 
 \begin{multicols}{2}
@@ -284,7 +326,18 @@ ggplot(datos, aes(x=Año, y=Crec_AcumA, fill=Datos)) + geom_bar(stat="identity",
 \end{multicols}
 
 
-\item \textbf{Tasa de crecimiento instantáneo:} Esta medida supone la hipótesis que la población crece a una tasa anual $r$, instantáneamente, de manera que los nuevos efectivos crecen a su vez sin esperar
+\item \textbf{Tasa de crecimiento instantáneo:} Esta medida supone la hipótesis que la población crece a una tasa anual $r$, instantáneamente, de manera que los nuevos efectivos crecen a su vez sin esperar un año. Por tanto, al partir de la expresión:
+\[P_t=P_0\left(1+\frac{1}{n}\right)^{nt}\]
+tomando el límite cuando $n$ tiende a infinito, se obtiene:
+\[P_t=\lim_{n\to \infty} P_0\left(1+\frac{1}{n}\right)^{nt} = P_0 e^{rt}\]
+aplicando logaritmos en la igualdad anterior, despejamos $r$ como:
+\[r=\frac{\ln(P_{t+n})-\ln(P_t)}{n}\]
+donde:
+\begin{itemize}
+      \item $P_t$: Población correspondiente al instante $t$.
+      \item $P_{t+n}$: Población correspondiente al instante $t+n$.
+      \item $r$: Tasa de crecimiento instantáneo.
+\end{itemize}
 
 \begin{multicols}{2}
 \begin{table}[H]
