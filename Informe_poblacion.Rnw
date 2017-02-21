@@ -411,21 +411,31 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 \end{tabular}
 \end{table}
 
-<<>>=
-library(pyramid)
-load("datos.RData")
-p1 <- pyramid(datos2,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
-        2001",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
-print(p2)
-@
 
-
-<<>>=
-load("datos.RData")
-p2 <- pyramid(datos1,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
-        2016",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
-print(p2)
-@
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Alicante2001.pdf}
+ \end{figure}
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Alicante2016.pdf}
+\end{figure}
+ 
+ 
+% # <<>>=
+% # library(pyramid)
+% # load("datos.RData")
+% # pyramid(datos2,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+% #         2001",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+% # @
+% # 
+% # 
+% # <<>>=
+% # load("datos.RData")
+% # pyramid(datos1,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+% #         2016",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+% # @
 
 
 
