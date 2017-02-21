@@ -60,6 +60,8 @@ El siguiente trabajo tiene como propósito analizar la evolución poblacional qu
 suppressWarnings(library(readxl))
 suppressWarnings(library(ggplot2))
 datos <- read_excel("datos_poblacion.xlsx", sheet = 1)
+datos1 <- read_excel("datos_poblacion.xlsx", sheet = 2)[,1:3]
+datos2 <- read_excel("datos_poblacion.xlsx", sheet = 2)[,5:7]
 save(list = ls(all.names = TRUE), file = "datos.RData", envir = .GlobalEnv)
 @
 
@@ -314,10 +316,31 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 
 \end{itemize}
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|p{3cm}|}\hline
+\multicolumn{8}{|c|}{\bf Población Alicante 2001}\\ \hline
+\multirow{1}{*} {\bf Edad} & {\bf Total} & {\bf Hombres}
+& {\bf Mujeres}&{\bf Edad} & {\bf Total} & {\bf Hombres}
+& {\bf Mujeres}\\ \hline
+0-4& 72425& 37339& 35086& 55-59& 78028& 37896& 40132\\ \hline
+5-9& 72300& 37107& 35193& 60-64& 72778& 35384& 37394\\ \hline
+10-14& 81172& 41629& 39543& 65-69& 72881& 34975& 37906\\ \hline
+15-19& 91432& 46884& 44548& 70-74& 64695& 29791& 34904\\ \hline
+20-24& 115954& 59557& 56397& 75-79& 49866& 21410& 28456\\ \hline
+25-29& 123874& 63872& 60002& 80-84& 28090& 10707& 17383\\ \hline
+30-34& 119858& 60719& 59139& 85-89& 13736& 4623& 9113\\ \hline
+35-39& 117116& 59097& 58019& 90-94& 4835& 1397& 3438\\ \hline
+40-44& 106761& 53350& 53411& 95-99& 994& 242& 752\\ \hline
+45-49& 90547& 44807& 45740& 100 ó más años& 118& 38& 80\\ \hline
+50-54& 84465& 41338& 43127& TOTAL& 1461925& 722162& 739763\\ \hline
+\end{tabular}
+\end{table}
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|p{3cm}|}\hline
+\multicolumn{8}{|c|}{\bf Población Alicante 2016}\\ \hline
 \multirow{1}{*} {\bf Edad} & {\bf Total} & {\bf Hombres}
 & {\bf Mujeres}&{\bf Edad} & {\bf Total} & {\bf Hombres}
 & {\bf Mujeres}\\ \hline
@@ -334,6 +357,23 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 50-54 & 134.886 &	67.554 & 67.332 &	TOTAL & 1.836.459 & 911.173 &	925.286\\ \hline
 \end{tabular}
 \end{table}
+
+<<>>=
+library(pyramid)
+load("datos.RData")
+p1 <- pyramid(datos2,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+        2001",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+print(p2)
+@
+
+
+<<>>=
+load("datos.RData")
+p2 <- pyramid(datos1,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+        2016",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+print(p2)
+@
+
 
 
 
