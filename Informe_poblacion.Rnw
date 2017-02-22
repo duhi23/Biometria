@@ -253,7 +253,7 @@ Los resultados muestran un aumento constante y semejante para la Provincia de Al
 
 
 \item\textbf{Tasa bruta de crecimiento:} Esta medida representa el cociente entre el crecimiento  absoluto anualizado y la población media:
-\[r=\frac{\frac{P_{t+n}-P_t}{n}}{\frac{P_{t+n}+P_t}{2}}\]
+\[r=\frac{\displaystyle\frac{P_{t+n}-P_t}{n}}{\displaystyle\frac{P_{t+n}+P_t}{2}}\]
 donde:
 \begin{itemize}
       \item $P_t$: Población correspondiente al instante $t$.
@@ -288,6 +288,10 @@ load("datos.RData")
 ggplot(datos, aes(x=Año, y=Crec_bruto, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Tasa de Crecimiento Bruto") + scale_y_continuous(breaks=seq(0,0.03,0.008))
 @
 \end{multicols}
+
+Los resultados ponen en evidencia que las tasas de crecimiento bruto durante el periodo 1990-1940 no mostraron grandes variaciones, pero a partir de 1950 dicha tasa es mucho mayor en el caso de la Provincia de Alicante respecto del total de España. Esto conlleva a pensar que la población de la Provincia tenido un acelerado crecimiento respecto a la tendencia marcada a nivel de país.\newline
+
+Las tasas más altas se presentaron en los años 1970, 1981 y 2011, en este último año la tasa correspondiente a Alicante duplica al valor del total de España.
 
 \newpage
 
@@ -329,6 +333,8 @@ load("datos.RData")
 ggplot(datos, aes(x=Año, y=Crec_AcumA, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Acumulativo Anual") + scale_y_continuous(breaks=seq(0,0.03,0.008))
 @
 \end{multicols}
+
+Se muestran pequeñas variaciones en el periodo 1990 - 1960, pero para el periodo siguiente 1970- 2011 las variaciones evidenciadas son mayores en el caso de la Provincia de Alicante respecto al total de España. En tal virtud, concluímos que Alicante presentó una tasa de crecimiento mayor en el último medio siglo duplicando dicha tasa en el año 2011.
 
 \newpage
 
@@ -375,6 +381,8 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 \end{multicols}
 
 \end{itemize}
+
+\newpage
 
 \subsection{Estructura Poblacional}
 
