@@ -247,6 +247,10 @@ ggplot(datos, aes(x=Año, y=Indice, fill=Datos)) + geom_bar(stat="identity", pos
 @
 \end{multicols}
 
+Los resultados muestran un aumento constante y semejante para la Provincia de Alicante y el total de España durante el periodo 1990-1970, pues las variaciones son inferiores a 12 puntos. Sin embargo, a partir de 1980 la variación del número indice correspondiente a la Provincia de Alicante supera los 40 puntos, lo cual implica que ha presentado un crecimiento poblacional considerable respecto a su población inicial de 1990, respecto del total de España.
+
+\newpage
+
 
 \item\textbf{Tasa bruta de crecimiento:} Esta medida representa el cociente entre el crecimiento  absoluto anualizado y la población media:
 \[r=\frac{\frac{P_{t+n}-P_t}{n}}{\frac{P_{t+n}+P_t}{2}}\]
@@ -285,6 +289,7 @@ ggplot(datos, aes(x=Año, y=Crec_bruto, fill=Datos)) + geom_bar(stat="identity",
 @
 \end{multicols}
 
+\newpage
 
 \item\textbf{Tasa de crecimiento acumulativo anual:} Es una medida muy utilizada para medir y comparar crecimientos totales de la población. Su hipótesis se basa en un crecimiento acumulativo anual geométrico. Su calculo se obtiene de la siguiente manera:
 \[P_{t+n}=P_t\cdot(1+r)^n \]
@@ -324,6 +329,8 @@ load("datos.RData")
 ggplot(datos, aes(x=Año, y=Crec_AcumA, fill=Datos)) + geom_bar(stat="identity", position="dodge") + xlab("Año") + ylab("Crecimiento Acumulativo Anual") + scale_y_continuous(breaks=seq(0,0.03,0.008))
 @
 \end{multicols}
+
+\newpage
 
 
 \item \textbf{Tasa de crecimiento instantáneo:} Esta medida supone la hipótesis que la población crece a una tasa anual $r$, instantáneamente, de manera que los nuevos efectivos crecen a su vez sin esperar un año. Por tanto, al partir de la expresión:
@@ -369,6 +376,8 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 
 \end{itemize}
 
+\subsection{Estructura Poblacional}
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|p{3cm}|}\hline
@@ -389,6 +398,12 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 50-54& 84465& 41338& 43127& TOTAL& 1461925& 722162& 739763\\ \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Alicante2001.pdf}
+ \end{figure}
+
 
 \begin{table}[H]
 \centering
@@ -412,10 +427,7 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 \end{table}
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.65]{Alicante2001.pdf}
- \end{figure}
+
  
 \begin{figure}[H]
     \centering
