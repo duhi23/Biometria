@@ -72,7 +72,7 @@ El objetivo del presente trabajo es analizar los procesos y cambios demográfico
 
 El trabajo constará de tres partes, mismas que se detallan a continuación:
 \begin{enumerate}
-      \item En una primera parte estudiaremos el crecimiento poblacional experimentado durante el último siglo tanto de la Provincia como de España por medio de indicadores demográficos. Además, se presentará la piramide poblacional y se comentará las principales variaciones ocurridas en la población.
+      \item En una primera parte estudiaremos el crecimiento poblacional experimentado durante el último siglo tanto de la Provincia como de España por medio de indicadores demográficos. Además, se presentará la pirámide poblacional y se comentará las principales variaciones ocurridas en la población.
       \item Posteriormente, se analizarán indicadores de mortalidad y se analizará el impacto que tiene sobre la Provincia, además se generará una tabla de mortalidad abreviada por género.
       \item Finalmente, se pretende estudiar la fecundidad de la Provincia usando varias medidas y tasas. Concluiremos realizando una proyección de la población para el año 2020.
 \end{enumerate}
@@ -390,6 +390,11 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.55]{Alicante2001.pdf}
+ \end{figure}
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|p{3cm}|}\hline
@@ -410,12 +415,26 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 50-54 & 134.886 &	67.554 & 67.332 &	TOTAL & 1.836.459 & 911.173 &	925.286\\ \hline
 \end{tabular}
 \end{table}
-
-\begin{figure}
-  \centering
-    \includegraphics[width=0.5\textwidth]{Alicante2016.pdf}
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.55]{Alicante2016.pdf}
 \end{figure}
-
+ 
+ 
+% # <<>>=
+% # library(pyramid)
+% # load("datos.RData")
+% # pyramid(datos2,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+% #         2001",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+% # @
+% # 
+% # 
+% # <<>>=
+% # load("datos.RData")
+% # pyramid(datos1,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
+% #         2016",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
+% # @
 
 
 
