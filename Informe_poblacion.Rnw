@@ -409,10 +409,10 @@ ggplot(datos, aes(x=Año, y=Crec_Inst, fill=Datos)) + geom_bar(stat="identity", 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.55]{Alicante2001.pdf}
+    \includegraphics[scale=.50]{Alicante2001.pdf}
 \end{figure}
 
-De acuerdo a los datos obtenidos para el año 2001, la población total de la Provincia de Alicante es de 1.836.459 donde los hombres representan el 49,62\% y las mujeres el 50,38\%. En cuanto a las personas mayores de 65 años los cuales tienen derecho a pensión son el 19,07\% repartido en un 10,46\% para mujeres y un 8,60\% para hombres, evidenciando que las mujeres mayores de 65 años superan a los hombres. Por otro lado la población económicamente activa que tienen entre 20 y 64 años, alcanzan el 61,10\%.  
+De acuerdo a los datos obtenidos para el año 2001, la población total de la Provincia de Alicante es de 1.461.925 donde los hombres representan el 49,40\% y las mujeres el 50,60\%. En cuanto a las personas mayores de 65 años los cuales tienen derecho a pensión son el 16,09\% repartido en un 9,03\% para mujeres y un 7,06\% para hombres, evidenciando que las mujeres mayores de 65 años superan a los hombres 1,97\%. Por otro lado la población económicamente activa que tienen entre 20 y 64 años, alcanzan el 62,20\%.  
 
 \begin{table}[H]
 \centering
@@ -438,9 +438,12 @@ De acuerdo a los datos obtenidos para el año 2001, la población total de la Pr
  
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.55]{Alicante2016.pdf}
+    \includegraphics[scale=.50]{Alicante2016.pdf}
 \end{figure}
- 
+
+
+Para los datos obtenidos del año 2016, la población total de la Provincia de Alicante es de 1.836.459 personas donde los hombres representan el 49,62\% y las mujeres el 50,38\%. En cuanto a las personas mayores de 65 años los cuales tienen derecho a pensión son el 19,07\% repartido en un 10,46\% para mujeres y un 8,60\% para hombres, evidenciando que las mujeres mayores de 65 años superan a los hombres en un 1,86\%. La  población económicamente activa alcanza el 61,10\%.\\
+Al comparar los datos de 2001 y 2016, podemos concluir que hubo un incremento de la población total del 25,62\%, manteniendo la proporción entre hombres y mujeres. A la vez se evidencia un aumento  en la población mayor de 65 años y una disminución de la población económicamente activa. Si dicha tendencia se mantiene, puede ser perjudicial para el sistema de seguridad social.
  
 % # <<>>=
 % # library(pyramid)
