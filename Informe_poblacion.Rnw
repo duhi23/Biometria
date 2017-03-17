@@ -447,20 +447,13 @@ De acuerdo a los datos obtenidos para el año 2001, la población total de la Pr
 Para los datos obtenidos del año 2016, la población total de la Provincia de Alicante es de 1.836.459 personas presentando la mayor concentración entre los 35 y los 70 años de edad. Los hombres representan el 49,62\% y las mujeres el 50,38\%. En cuanto a las personas mayores de 65 años las cuales tienen derecho a pensión son el 19,07\% repartido en un 10,46\% para mujeres y un 8,60\% para hombres, evidenciando que las mujeres mayores de 65 años superan a los hombres en un 1,86\%. La  población económicamente activa alcanza el 61,10\%.\\
 \\
 Al comparar los datos de 2001 y 2016, podemos concluir que hubo un incremento de la población total del 25,62\%, manteniendo la proporción entre hombres y mujeres. A la vez se evidencia un aumento  en la población mayor de 65 años en un 2,98\% y una disminución de la población económicamente activa en un 1,11\%. Si dicha tendencia se mantiene, puede ser perjudicial para el sistema de seguridad social, ya que maneja un sistema de reparto.
+
+\subsection{Tasas de mortalidad}
+
+En esta sección, analizaremos las tasas de mortalidad de la Provincia de Alicante para los grupos quinquenales de edad. Adicionalmente, realizaremos una comparación de dichas tasas sobre el total de España empleando una estandarización adecuada.
+
+
  
-% # <<>>=
-% # library(pyramid)
-% # load("datos.RData")
-% # pyramid(datos2,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
-% #         2001",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
-% # @
-% # 
-% # 
-% # <<>>=
-% # load("datos.RData")
-% # pyramid(datos1,Llab="Hombres",Rlab="Mujeres",Clab="Edad",main="Población Alicante
-% #         2016",Lcol="red", Rcol="blue", Cgap=0.5,GL=F)
-% # @
 
 
 
