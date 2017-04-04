@@ -687,6 +687,11 @@ Una descripción ampliada de las variables demográficas contenidas en la tabla 
       \[T_x=\sum_{i=0}^{\omega} ._nL_{x+in}\]
       \item $e_x:$ es la cantidad de años que como media puede esperar vivir más una persona que acaba de cumplir $x$ años.
       \[e_x=\frac{T_x}{l_x}\]
+      
+
+\section{Fecundidad}
+
+
 
 \end{itemize}
 
