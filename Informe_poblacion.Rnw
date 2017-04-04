@@ -450,13 +450,15 @@ Al comparar los datos de 2001 y 2016, podemos concluir que hubo un incremento de
 
 \newpage
 
-\subsection{Tasas de mortalidad}
+\section{Tasas de mortalidad}
 
-En esta sección, analizaremos las tasas de mortalidad de la Provincia de Alicante para los grupos quinquenales de edad. Adicionalmente, realizaremos una comparación de dichas tasas sobre el total de España empleando una estandarización adecuada.
+En esta sección, analizaremos las tasas de mortalidad de la Provincia de Alicante para los grupos quinquenales de edad. Adicionalmente, realizaremos una comparación de dichas tasas sobre el total de España empleando una estandarización adecuada.\newline
+
+Iniciamos recopilando la información de la población a inicio del 2015 y 2016, así como el número de defunciones durante el año 2015 para el total de España y la Provincia de Alicante:
 
 \begin{table}[H]
 \centering
-\fontsize{9pt}{10pt} \selectfont
+\fontsize{9pt}{10.5pt} \selectfont
 \begin{tabular}{|c|c|c|c|c|c|c|}\hline
  & \multicolumn{2}{|c|}{Pob. 1 Enero de 2015} & \multicolumn{2}{|c|}{Pob. 1 Enero de 2016} & \multicolumn{2}{|c|}{Defunciones 2015} \\ \hline
 Edad & Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres \\ \hline
@@ -483,14 +485,13 @@ menos de 1 &    220.124 &    206.335 &    215.948 &    203.447 &        634 &   
 \caption{Población y defunciones de España}
 \end{table}
 
- 
 
 \begin{table}[H]
 \centering
-\fontsize{9pt}{10pt} \selectfont
+\fontsize{9pt}{10.5pt} \selectfont
 \begin{tabular}{|c|c|c|c|c|c|c|}\hline
 & \multicolumn{2}{|c|}{Pob. 1 Enero de 2015} & \multicolumn{2}{|c|}{Pob. 1 Enero de 2016} & \multicolumn{2}{|c|}{ Defunciones 2015} \\ \hline
-& Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres \\ \hline
+Edad & Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres \\ \hline
 menos de 1 &      8.209 &      7.829 &      8.324 &      7.663 &         25 &         13 \\  \hline
      1 a 4 &     35.682 &     33.253 &     34.838 &     32.755 &          1 &          7 \\ \hline
      5 a 9 &     50.463 &     47.405 &     50.369 &     47.094 &          2 &          0 \\ \hline
@@ -514,40 +515,104 @@ menos de 1 &      8.209 &      7.829 &      8.324 &      7.663 &         25 &   
 \caption{Población y defunciones de Alicante}
 \end{table}
 
+En primera instancia obtendremos la tasa de mortalidad bruta, misma que representa el número de defunciones por persona-año resgistrado en una población:
+\[TBM=\frac{\displaystyle\frac{D(t,t+n)}{n}}{\displaystyle\frac{P^t+P^{t+n}}{2}}*1000\]
 
 \begin{table}[H]
 \centering
-\fontsize{7.5pt}{8.5pt} \selectfont
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\hline
-& \multicolumn{2}{|c|}{España} & \multicolumn{2}{|c|}{Alicante} & \multicolumn{2}{|c|}{España} & \multicolumn{2}{|c|}{Alicante} & \multicolumn{2}{|c|}{} \\ \hline
-& \multicolumn{2}{|c|}{Población media 2015} & \multicolumn{2}{|c|}{Población media 2015} & \multicolumn{2}{|c|}{TME 2015} & \multicolumn{2}{|c|}{TME 2015} & \multicolumn{2}{|c|}{TME 2015 estandar} \\ \hline
-& Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres \\ \hline
-menos de 1 &    218.036 & 204.891 & 8.267 & 7.746 & 2,90 & 2,46 & 3,02 & 1,67 & 659,39 & 343,86 \\ \hline
-1 a 4 & 931.105 & 875.696 & 35.260 & 33.004 & 0,140 & 0,10 & 0,02 & 0,21 & 26,40 & 185,73 \\ \hline
-5 a 9 &  1.280.262 &  1.200.529 & 50.416 & 47.250 & 0,09 & 0,07 & 0,04 & 0,00 & 50,78 & 0,00 \\ \hline
-10 a 14 &  1.196.544 &  1.130.179 & 48.044 & 44.834 & 0,09 & 0,08 & 0,08 & 0,04 & 99,62 & 50,41 \\ \hline
-15 a 19 &  1.116.705 &  1.052.758 & 44.792 & 42.199 & 0,24 & 0,11 & 0,29 & 0,07 & 324,10 & 74,84 \\ \hline
-20 a 24 &  1.172.585 &  1.127.382 & 46.641 & 44.579 & 0,34 & 0,15 & 0,27 & 0,06 & 326,83 & 75,86 \\ \hline
-25 a 29  &  1.303.118 &  1.299.135 & 51.476 & 50.809 & 0,44 & 0,17 & 0,29 & 0,09 & 379,73 & 127,84 \\ \hline
-30 a 34 &  1.597.105 &  1.588.030 & 62.106 & 61.249 & 0,51 & 0,22 & 0,51 & 0,22 & 822,91 & 362,98 \\ \hline
-35 a 39 &  1.981.357 &  1.918.048 & 78.237 & 73.727 & 0,73 & 0,38 & 0,60 & 0,33 & 1.190,28 & 650,39 \\ \hline
-40 a 44 &  1.990.527 &  1.916.714 & 78.478 & 73.765 & 1,17 & 0,70 & 1,35 & 0,67 &  2.688,59 &  1.299,21 \\ \hline
-45 a 49 &  1.867.923 &  1.834.028 & 73.320 & 70.999 & 2,21 & 1,21 & 2,34 & 1,15 &  4.381,95 &  2.118,21 \\ \hline
-50 a 54 &  1.712.012 &  1.723.019 & 67.642 & 66.945 & 4,01 & 1,97 & 3,99 & 2,13 &  6.833,67 &  3.680,50 \\ \hline
-55 a 59 &  1.490.632 &  1.535.361 & 58.334 & 60.488 & 6,54 & 3,05 & 6,01 & 3,43 &  8.969,24 &  5.279,64 \\ \hline
-60 a 64 &  1.234.105 &  1.303.965 & 50.385 & 53.840 & 9,96 & 4,12 & 10,04 & 4,40 & 12.393,71 &  5.739,96 \\ \hline
-65 a 69 &  1.118.834 &  1.233.990 & 49.837 & 54.443 & 15,04 & 6,07 & 14,56 & 6,30 & 16.298,59 &  7.774,34 \\ \hline
-70 a 74 & 908.897 &  1.053.481 & 42.495 & 46.080 & 22,87 & 10,05 & 21,48 & 9,67 & 19.527,77 & 10.196,44 \\ \hline
-75 a 79 & 682.302 & 886.297 & 31.712 & 36.360 & 40,20 & 20,41 & 38,47 & 19,63 & 26.249,39 & 17.404,42 \\ \hline
-80 a 84 & 575.914 & 852.259 & 22.596 & 29.723 & 69,22 & 43,11 & 66,91 & 43,77 & 38.537,84 & 37.304,07 \\ \hline
-85 y mas & 440.027 & 893.955 & 15.885 & 28.515 & 155,58 & 130,78 & 150,02 & 138,38 & 66.012,97 & 123.708,44 \\ \hline
+\fontsize{10pt}{11.5pt} \selectfont
+\begin{tabular}{|c|c|c|}\hline
+Población & Alicante & España \\ \hline
+Hombres & 9,07396631 & 9,34828341 \\ \hline
+Mujeres & 8,13986494 & 8,85575678 \\ \hline
+Total   & 8,60422000 & 9,09771640 \\ \hline
 \end{tabular}
-\caption{Poblaciones Medias}
+\caption{TBM España y Alicante}
 \end{table}
 
+Ahora procedemos a la obtención de la tasa de mortalidad específica, misma que relaciona el número de defunciones a una edad $x$ con la población media de esa edad sometida a riesgo:
+\[TME=m_x^t=\frac{D_x^t}{\displaystyle\frac{P_x^t+P_x^{t+1}}{2}}*1000\]
+
+\begin{table}[H]
+\centering
+\fontsize{9pt}{10.5pt} \selectfont
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\hline
+& \multicolumn{2}{|c|}{España} & \multicolumn{2}{|c|}{Alicante} & \multicolumn{2}{|c|}{España} & \multicolumn{2}{|c|}{Alicante}\\ \hline
+& \multicolumn{2}{|c|}{Población media 2015} & \multicolumn{2}{|c|}{Población media 2015} & \multicolumn{2}{|c|}{TME 2015} & \multicolumn{2}{|c|}{TME 2015} \\ \hline
+& Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres & Hombres & Mujeres\\ \hline
+menos de 1 &    218.036 & 204.891 & 8.267 & 7.746 & 2,90 & 2,46 & 3,02 & 1,67 \\ \hline
+1 a 4 & 931.105 & 875.696 & 35.260 & 33.004 & 0,140 & 0,10 & 0,02 & 0,21 \\ \hline
+5 a 9 &  1.280.262 &  1.200.529 & 50.416 & 47.250 & 0,09 & 0,07 & 0,04 & 0,00 \\ \hline
+10 a 14 &  1.196.544 &  1.130.179 & 48.044 & 44.834 & 0,09 & 0,08 & 0,08 & 0,04 \\ \hline
+15 a 19 &  1.116.705 &  1.052.758 & 44.792 & 42.199 & 0,24 & 0,11 & 0,29 & 0,07 \\ \hline
+20 a 24 &  1.172.585 &  1.127.382 & 46.641 & 44.579 & 0,34 & 0,15 & 0,27 & 0,06 \\ \hline
+25 a 29  &  1.303.118 &  1.299.135 & 51.476 & 50.809 & 0,44 & 0,17 & 0,29 & 0,09 \\ \hline
+30 a 34 &  1.597.105 &  1.588.030 & 62.106 & 61.249 & 0,51 & 0,22 & 0,51 & 0,22 \\ \hline
+35 a 39 &  1.981.357 &  1.918.048 & 78.237 & 73.727 & 0,73 & 0,38 & 0,60 & 0,33 \\ \hline
+40 a 44 &  1.990.527 &  1.916.714 & 78.478 & 73.765 & 1,17 & 0,70 & 1,35 & 0,67 \\ \hline
+45 a 49 &  1.867.923 &  1.834.028 & 73.320 & 70.999 & 2,21 & 1,21 & 2,34 & 1,15 \\ \hline
+50 a 54 &  1.712.012 &  1.723.019 & 67.642 & 66.945 & 4,01 & 1,97 & 3,99 & 2,13 \\ \hline
+55 a 59 &  1.490.632 &  1.535.361 & 58.334 & 60.488 & 6,54 & 3,05 & 6,01 & 3,43 \\ \hline
+60 a 64 &  1.234.105 &  1.303.965 & 50.385 & 53.840 & 9,96 & 4,12 & 10,04 & 4,40 \\ \hline
+65 a 69 &  1.118.834 &  1.233.990 & 49.837 & 54.443 & 15,04 & 6,07 & 14,56 & 6,30 \\ \hline
+70 a 74 & 908.897 &  1.053.481 & 42.495 & 46.080 & 22,87 & 10,05 & 21,48 & 9,67 \\ \hline
+75 a 79 & 682.302 & 886.297 & 31.712 & 36.360 & 40,20 & 20,41 & 38,47 & 19,63 \\ \hline
+80 a 84 & 575.914 & 852.259 & 22.596 & 29.723 & 69,22 & 43,11 & 66,91 & 43,77 \\ \hline
+85 y mas & 440.027 & 893.955 & 15.885 & 28.515 & 155,58 & 130,78 & 150,02 & 138,38\\ \hline
+\end{tabular}
+\caption{TME España y Alicante}
+\end{table}
+
+A la hora de comparar la mortalidad del país y la provincia, se conoce que las tasas brutas de mortalidad no son suficientes debido a las distintas estructuras de población y a la diferente incidencia que tiene la mortalidad sobre cada grupo de edad y género, por tanto es necesario recurrir a las tasas específicas por edad y resumirlas en un índice sintético que permita realizar las comparaciones, este procedimiento se denomina \emph{estandarización}.\newline
+
+Consiste en aplicar las tasas específicas de mortalidad de las poblaciones a comparar a una misma estructura de población o población tipo, es decir, es como si ambas poblaciones tuvieran los mismos efectivos de población pero distintas tasas específicas de mortalidad. Lo resultados se muestran a continuación:
+
+\begin{table}[H]
+\centering
+\fontsize{9pt}{10.5pt} \selectfont
+\begin{tabular}{|c|c|c|}\hline
+Edad & Hombres & Mujeres \\ \hline
+menos de 1 & 659,39 & 343,86 \\ \hline
+1 a 4 & 26,40 & 185,73 \\ \hline
+5 a 9 & 50,78 & 0,00 \\ \hline
+10 a 14 & 99,62 & 50,41 \\ \hline
+15 a 19 & 324,10 & 74,84 \\ \hline
+20 a 24 & 326,83 & 75,86 \\ \hline
+25 a 29 & 379,73 & 127,84 \\ \hline
+30 a 34 & 822,91 & 362,98 \\ \hline
+35 a 39 & 1.190,28 & 650,39 \\ \hline
+40 a 44 & 2.688,59 &  1.299,21 \\ \hline
+45 a 49 & 4.381,95 &  2.118,21 \\ \hline
+50 a 54 & 6.833,67 &  3.680,50 \\ \hline
+55 a 59 & 8.969,24 &  5.279,64 \\ \hline
+60 a 64 & 12.393,71 &  5.739,96 \\ \hline
+65 a 69 & 16.298,59 &  7.774,34 \\ \hline
+70 a 74 & 19.527,77 & 10.196,44 \\ \hline
+75 a 79 & 26.249,39 & 17.404,42 \\ \hline
+80 a 84 & 38.537,84 & 37.304,07 \\ \hline
+85 y mas & 66.012,97 & 123.708,44 \\ \hline
+\end{tabular}
+\caption{Estandarización España y Alicante}
+\end{table}
+
+\begin{table}[H]
+\centering
+\fontsize{10pt}{11.5pt} \selectfont
+\begin{tabular}{|c|c|c|c|}\hline
+& Hombres & Mujeres & Total \\ \hline
+Observadas & 8.311 & 7.542 & 15.853 \\ \hline
+Esperadas  & 205.774 & 216.377 & 422.151 \\ \hline
+IME        & 0,040389 & 0,034856 & 0,037553\\ \hline
+\end{tabular}
+\caption{Índice de mortalidad estándar}
+\end{table}
+
+En este caso como la comparación se realiza entre la Provincia de Alicante y España, la población tipo (España) presentaría un IME estándar de 1.
 
 
 \section{Tablas de Mortalidad}
+
+Las tablas de mortalidad es una herramienta demográfica diseñada para proporcionar un análisis completo de la mortalidad, proporcionando, entre otras cosas, las probabilidades de muerte de una determinada población, por cada año de edad o por grupos quinquenales de edad, tanto entre aniversarios como entre edades en años cumplidos.
 
 \begin{table}[H]
 \centering
@@ -604,8 +669,26 @@ Edad & $P_x$ & $D_x$ &  $M_x$ & $q_x$ & $l_x$ & $d_x$ & $a_x$ & $L_x$ & $T_x$ & 
 80-84 & 29.723 & 1.301 & 0,0437708 & 0,1972677 & 78.347 & 15.456 & 2,5 & 353.095 & 807.565 & 10,31 \\ \hline
 85-más & 28.515 & 3946 & 0,1383833 & 1,0000000 & 62.891 & 62.894 & 7,23 & 454.470 & 454.470 & 7,23 \\ \hline
 \end{tabular}
-\caption{Tabla de Mortalidad - Hombres}
+\caption{Tabla de Mortalidad - Mujeres}
 \end{table}
+
+Una descripción ampliada de las variables demográficas contenidas en la tabla de mortalidad se muestra, a continuación:
+\begin{itemize}
+      \item $q_x:$ representa la probabilidad de que un individuo que llego a su x-esimo aniversario fallezca antes de su siguiente aniversario.
+      \[q_x=\frac{d(x,x+1)}{l_x}\]
+      
+      \item $l_x:$ representa los supervivientes de esa generación (de $l_0$ nacidos) a la edad exacta $x$.
+      \item $d(x,x+1):$ indica las defunciones de individuos de x años cumplidos.
+      \[d(x, x+1) = l_x - l_{x+1}\]
+      \item $_na_x:$ es la esperanza de vida que tienen aquellos que, habiendo llegado vivos a la edad $x$, mueren antes de llegar a cumplir $x+n$ años.
+      \item $_nL_x:$ es el total de años vividos en el intervalo $(x,x+n)$ por los supervivientes de la generación ficticia $l_x$ al principio del intervalo.
+      \[_nL_x=n.l_{x+n}+(l_x - l_{x+n})._na_x\]
+      \item $T_x:$ expresa el total de años que quedan por vivir a los que cumplieron x años, o el tiempo total vivido por la generación ficticia desde la edad exacta $x$ hasta su extinción es la suma de las poblaciones estacionarias mayores de $x$ años.
+      \[T_x=\sum_{i=0}^{\omega} ._nL_{x+in}\]
+      \item $e_x:$ es la cantidad de años que como media puede esperar vivir más una persona que acaba de cumplir $x$ años.
+      \[e_x=\frac{T_x}{l_x}\]
+
+\end{itemize}
 
 
 
