@@ -700,9 +700,132 @@ Una descripción ampliada de las variables demográficas contenidas en la tabla 
 
 \end{itemize}
 
+\newpage
+
+
+\section{Fecundidad}
+
+Los países europeos en la actualidad no presentan indicadores de fecundidad satisfactorios que permitan el mantenimiento del actual volumen de población. La demografía, nos dice que una población con una fecundidad por debajo del nivel de reproducción es una población que envejece inexorablemente, provocando desequilibrios en el gasto sanitario y en el de las pensiones, que pesa sobre las cada vez más reducidas generaciones jóvenes. Además, con toda la sabiduría y experiencia que podemos reconocer a los ancianos, si estos prevalecen en la población es más difícil que una sociedad sea capaz de generar innovación cultural, científica y tecnológica.\newline
+
+A continuación, obtendremos las diversas medidas sobre la fecundidad de la Provincia de Alicante en el año 2015.\newline
+
+{\bf Tasa Bruta de Natalidad}: es el cociente entre el número de nacimientos por año y el total del número de personas-año vividos por la población.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}\hline
+Población 2015 & 1.842.171\\ \hline
+Población 2016 & 1.842.765\\ \hline
+Nacimientos 2015 & 15.902\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{align*}
+TBM(2015) &= \frac{N(2015)}{\displaystyle\frac{P(2015)+P(2016)}{2}}\\
+TBM(2015) &= \frac{15.902}{\displaystyle\frac{1.842.171+1.842.765}{2}}\\
+TBM(2015) &= 8.630815
+\end{align*}
+
+{\bf Tasa General de Fecundidad}: relaciona el número total de nacimientos de una población por año, con la población media femenina de 15 a 49 años.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}\hline
+Población femenina entre 15-49: 2015 & 419.564\\ \hline
+Población femenina entre 15-49: 2016 & 415.085\\ \hline
+Nacimientos 2015 & 15.902\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{align*}
+TGF(2015) &= \frac{N(2015)}{\displaystyle\frac{Pf_{15-60}(2015)+Pf_{15-60}(2016)}{2}}\cdot 1000\\
+TGF(2015) &= \frac{15.902}{\displaystyle\frac{419.564+415.085}{2}}\\
+TGF(2015) &= 38.104640
+\end{align*}
+
+{\bf Tasas específicas de Fecundidad}: se define como el número de nacimientos anualizado divido por la población media de mujeres correspondientes en tantos por mil.
+
+% Revisar
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}\hline
+     & \multicolumn{2}{|c|}{Mujeres Alicante} & Nacimientos &\\ \hline
+Edad & Año 2015 & Año 2016 & Año 2015 & $TEF_x^t$\\ \hline
+15 a 19 & 42.056 & 42.341 & 400  & 9.479010\\ \hline
+20 a 24 & 45.067 & 44.091 & 1217 & 27.299850\\ \hline
+25 a 29 & 51.500 & 50.118 & 2957 & 58.198351\\ \hline
+30 a 34 & 62.717 & 59.780 & 5733 & 93.602292\\ \hline
+35 a 39 & 74.128 & 73.325 & 4443 & 60.263270\\ \hline
+40 a 44 & 73.442 & 74.087 & 1074 & 14.559850\\ \hline
+45 a 49 & 70.654 & 71.343 & 78   & 1.098615\\ \hline
+Total & 419.564 & 415.085 & 15.902 & --  \\ \hline
+\end{tabular}
+\caption{Tasa específica de fecundidad}
+\end{table}
+
+
+{\bf Índice sintético de Fecundidad}: representa el número medio de hijos que tendría una hipotética mujer que a lo largo de su vida fértil tuviera las tasas específicas de fecundidad del año de referencia.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}\hline
+Edad & Tasa       & Nacimientos\\
+     & específica & reducidos \\ \hline
+15 a 19 &  9.479010 & 0.047395\\ \hline
+20 a 24 & 27.299850 & 0.136499\\ \hline
+25 a 29 & 58.198351 & 0.290992\\ \hline
+30 a 34 & 93.602292 & 0.468011\\ \hline
+35 a 39 & 60.263270 & 0.301316\\ \hline
+40 a 44 & 14.559850 & 0.072799\\ \hline
+45 a 49 &  1.098615 & 0.005493\\ \hline
+Total	  & 264.501237 & 1.322506\\ \hline
+\end{tabular}
+\caption{Índice sintético de Fecundidad}
+\end{table}
+
+{\bf Edad media a la maternidad}: representa la edad media a la que tiene sus hijos la hipotética mujer cuyas condiciones de fecundidad son iguales por edad a las de las mujeres observadas en el análisis.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}\hline
+Edad & Edad  & Tasa  & (A)*(B)\\ 
+     & Media (A) & específica (B) & \\ \hline
+15 a 19 & 17 &  9.479010 & 161.14 \\ \hline
+20 a 24 & 22 & 27.299850 & 600.60\\ \hline
+25 a 29 & 27 & 58.198351 & 1571.36\\ \hline
+30 a 34 & 32 & 93.602292 & 2995.27\\ \hline
+35 a 39 & 37 & 60.263270 & 2229.74\\ \hline
+40 a 44 & 42 & 14.559849 & 611.51\\ \hline
+45 a 49 & 47 &  1.098615 & 51.63\\ \hline
+Total	& -- & 264.50 & 8221.26\\ \hline
+\end{tabular}
+\end{table}
+
+\[EM=\frac{8221.26}{264.50}=31.08\]
+
+
+{\bf Tasa bruta de mortalidad}: indica el número medio de hijas que tendría una hipotética mujer a lo largo de su vida fértil si las condiciones de natalidad fueran las del año en cuestión.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}\hline
+Edad & Nacimientos & No. Medio   & Tasa       & Nacimientos\\
+     & femeninos   & de Mujeres & específica & reducidos\\ \hline
+15 a 19 & 188  & 42199 &  4.455082 & 0.022275 \\ \hline
+20 a 24 & 572  & 44579 & 12.831154 & 0.064156 \\ \hline
+25 a 29 & 1416 & 50809 & 27.869078 & 0.139345 \\ \hline
+30 a 34 & 2781 & 61249 & 45.404823 & 0.227024 \\ \hline
+35 a 39 & 2121 & 73727 & 28.768294 & 0.143841 \\ \hline
+40 a 44 & 504  & 73765 &  6.832509 & 0.034162 \\ \hline
+45 a 49 & 46   & 70999 &  0.647896 & 0.003239 \\ \hline
+\multicolumn{4}{r|}{\bf TBR\quad} & {\bf 0.634044}\\ \cline{5-5}
+\end{tabular}
+\end{table}
 
 
 
+5.- Estudiar la fecundidad de la Provincia en el año 2015. Calculando las diversas medidas que se han dado en clase, así como, las diversas tasas de reproducción. (Utilizar la tabla de mortalidad del punto anterior y datos de cifras de la población)
+
+6.- Hacer una proyección de la población de la Provincia al 1 de enero de 2020 suponiendo que no ha habido migraciones y que las condiciones de mortalidad y fecundidad son las obtenidas anteriormente. Población de partida: cifras de la población actual.
 
 
 
