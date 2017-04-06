@@ -713,7 +713,8 @@ A continuación, obtendremos las diversas medidas sobre la fecundidad de la Prov
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|}\hline
+\begin{tabular}{|c|c|}\cline{2-2}
+\multicolumn{1}{c|}{} & Individuos \\ \hline
 Población 2015 & 1.842.171\\ \hline
 Población 2016 & 1.842.765\\ \hline
 Nacimientos 2015 & 15.902\\ \hline
@@ -721,16 +722,17 @@ Nacimientos 2015 & 15.902\\ \hline
 \end{table}
 
 \begin{align*}
-TBM(2015) &= \frac{N(2015)}{\displaystyle\frac{P(2015)+P(2016)}{2}}\\
-TBM(2015) &= \frac{15.902}{\displaystyle\frac{1.842.171+1.842.765}{2}}\\
-TBM(2015) &= 8.630815
+TBM(2015) &= \frac{N(2015)}{\displaystyle\frac{P(2015)+P(2016)}{2}}\cdot 1000\\
+TBM(2015) &= \frac{15.902}{\displaystyle\frac{1.842.171+1.842.765}{2}}\cdot 1000\\
+TBM(2015) &= 8.630815\\
 \end{align*}
 
 {\bf Tasa General de Fecundidad}: relaciona el número total de nacimientos de una población por año, con la población media femenina de 15 a 49 años.
 
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|}\hline
+\begin{tabular}{|c|c|}\cline{2-2}
+\multicolumn{1}{c|}{} & Individuos \\ \hline
 Población femenina entre 15-49: 2015 & 419.564\\ \hline
 Población femenina entre 15-49: 2016 & 415.085\\ \hline
 Nacimientos 2015 & 15.902\\ \hline
@@ -739,9 +741,11 @@ Nacimientos 2015 & 15.902\\ \hline
 
 \begin{align*}
 TGF(2015) &= \frac{N(2015)}{\displaystyle\frac{Pf_{15-60}(2015)+Pf_{15-60}(2016)}{2}}\cdot 1000\\
-TGF(2015) &= \frac{15.902}{\displaystyle\frac{419.564+415.085}{2}}\\
-TGF(2015) &= 38.104640
+TGF(2015) &= \frac{15.902}{\displaystyle\frac{419.564+415.085}{2}} \cdot 1000\\
+TGF(2015) &= 38.104640\\
 \end{align*}
+
+\newpage
 
 {\bf Tasas específicas de Fecundidad}: se define como el número de nacimientos anualizado divido por la población media de mujeres correspondientes en tantos por mil.
 
@@ -750,7 +754,7 @@ TGF(2015) &= 38.104640
 \centering
 \begin{tabular}{|c|c|c|c|c|}\hline
      & \multicolumn{2}{|c|}{Mujeres Alicante} & Nacimientos &\\ \hline
-Edad & Año 2015 & Año 2016 & Año 2015 & $TEF_x^t$\\ \hline
+Edad & Año 2015 & Año 2016 & Año 2015 & {\bf $TEF_x^t$}\\ \hline
 15 a 19 & 42.056 & 42.341 & 400  & 9.479010\\ \hline
 20 a 24 & 45.067 & 44.091 & 1217 & 27.299850\\ \hline
 25 a 29 & 51.500 & 50.118 & 2957 & 58.198351\\ \hline
@@ -777,7 +781,7 @@ Edad & Tasa       & Nacimientos\\
 35 a 39 & 60.263270 & 0.301316\\ \hline
 40 a 44 & 14.559850 & 0.072799\\ \hline
 45 a 49 &  1.098615 & 0.005493\\ \hline
-Total	  & 264.501237 & 1.322506\\ \hline
+\multicolumn{2}{r|}{\bf ISF\quad } & {\bf 1.322506}\\ \cline{3-3}
 \end{tabular}
 \caption{Índice sintético de Fecundidad}
 \end{table}
@@ -800,8 +804,9 @@ Total	& -- & 264.50 & 8221.26\\ \hline
 \end{tabular}
 \end{table}
 
-\[EM=\frac{8221.26}{264.50}=31.08\]
+\[EM=\frac{8221.26}{264.50}=31.08 \text{ años}\]
 
+\newpage
 
 {\bf Tasa bruta de mortalidad}: indica el número medio de hijas que tendría una hipotética mujer a lo largo de su vida fértil si las condiciones de natalidad fueran las del año en cuestión.
 
@@ -817,16 +822,16 @@ Edad & Nacimientos & No. Medio   & Tasa       & Nacimientos\\
 35 a 39 & 2121 & 73727 & 28.768294 & 0.143841 \\ \hline
 40 a 44 & 504  & 73765 &  6.832509 & 0.034162 \\ \hline
 45 a 49 & 46   & 70999 &  0.647896 & 0.003239 \\ \hline
-\multicolumn{4}{r|}{\bf TBR\quad} & {\bf 0.634044}\\ \cline{5-5}
+\multicolumn{4}{r|}{\bf TBR\qquad} & {\bf 0.634044}\\ \cline{5-5}
 \end{tabular}
 \end{table}
 
 {\bf Tasa neta de reproducción (Índice de Kuczynsky)}: La tasa neta de reproducción es ajustar la tasa bruta por la mortalidad y se utilizan los datos de la tabla de mortalidad femenina.
 \begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-      Edad & 5Lx/500000 & Poblacion fem & Nacimientos fem &        TEF &  TEF ajust & Nacimientos red \\\hline
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+Edad & 5Lx/500000 & Población & Nacimientos & TEF &  TEF  & Nacimientos \\
+     &            & femenina  & femenina &        & ajustada & reducidos \\ \hline
    15 a 19 &   0,997075 &      42199 &        188 &   4,455082 &   4,442051 &   0,022210 \\\hline
    20 a 24 &   0,996730 &      44579 &        572 &  12,831154 &  12,789196 &   0,063946 \\\hline
   25 a 29  &   0,996315 &      50809 &       1416 &  27,869078 &  27,766381 &   0,138832 \\\hline
@@ -834,13 +839,17 @@ Edad & Nacimientos & No. Medio   & Tasa       & Nacimientos\\
    35 a 39 &   0,994085 &      73727 &       2121 &  28,768294 &  28,598129 &   0,142991 \\\hline
    40 a 44 &   0,991560 &      73765 &        504 &   6,832509 &   6,774842 &   0,033874 \\\hline
    45 a 49 &   0,987030 &      70999 &         46 &   0,647896 &   0,639493 &   0,003197 \\\hline
-   \multicolumn{6}{r|}{\bf $R_0$\quad} & {\bf 0.631053}\\ \cline{7-7}
+   \multicolumn{6}{r|}{\bf $R_0$\qquad} & {\bf 0.631053}\\ \cline{7-7}
 \end{tabular}  
 \end{table}
 
 
+\section{Proyecciones de población}
 
-{\bf Proyección de Población}:Se realiza la proyección de la población de 2015 a enero de 2020, utilizando datos de población, condiciones de fecundidad y probabilidades de transición calculadas anteriormente.
+La necesidad de contar con estimaciones y proyecciones de población radica en su importancia para la planificación de diferentes actividades tanto a nivel gubernamental como de empresa privada.  En efecto, numerosas instituciones públicas o privadas destinadas a brindar servicios como:  educación, salud, infraestructura vial, seguridad social, comercio, etc., requieren de estas cifras para planificar las demandas y necesidades de la población.  Por otro lado, actualmente, la planificación a nivel a nivel regional ha ganado gran importancia con respecto a la estrategia general de los planes de desarrollo de un gobierno central.  Esto obliga a los distintos gobiernos municipales a conocer las principales características socio-demográficas de las distintas localidades y sus necesidades básicas para el futuro.\newline
+
+
+En esta sección del trabajo, realizamos la proyección de la población de 2015 a enero de 2020, utilizando datos de población, condiciones de fecundidad y probabilidades de transición calculadas anteriormente.
 
 \begin{table}
 \centering
@@ -900,7 +909,7 @@ menos de 1 &      7.829 &   0,997952 &      7.245 \\\hline
 \end{tabular}
 \caption{Proyección de la población femenina de la provincia de Alicante de 2015 a enero de 2020}
  \end{table}
-En las proyecciones de población se observa que se presentará un disminución de 44.680 en la población masculina y de 40.412 en la femenina, generando un disminución de la población total de Alicante de 85.092. Lo cual puede darse por que las tasas espec[ificas de fecundidad no son tan altas para lograr un aumento.
+En las proyecciones de población se observa que se presentará un disminución de 44.680 en la población masculina y de 40.412 en la femenina, generando un disminución de la población total de Alicante de 85.092. Lo cual puede darse por que las tasas específicas de fecundidad no son tan altas para lograr un aumento.
 \\
 \\
 Para culminar el proceso de proyección de la población, se calculan los nacimientos tanto masculinos como femeninos para enero de 2020.
