@@ -821,15 +821,105 @@ Edad & Nacimientos & No. Medio   & Tasa       & Nacimientos\\
 \end{tabular}
 \end{table}
 
+{\bf Tasa neta de reproducción (Índice de Kuczynsky)}: La tasa neta de reproducción es ajustar la tasa bruta por la mortalidad y se utilizan los datos de la tabla de mortalidad femenina.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+      Edad & 5Lx/500000 & Poblacion fem & Nacimientos fem &        TEF &  TEF ajust & Nacimientos red \\\hline
+   15 a 19 &   0,997075 &      42199 &        188 &   4,455082 &   4,442051 &   0,022210 \\\hline
+   20 a 24 &   0,996730 &      44579 &        572 &  12,831154 &  12,789196 &   0,063946 \\\hline
+  25 a 29  &   0,996315 &      50809 &       1416 &  27,869078 &  27,766381 &   0,138832 \\\hline
+   30 a 34 &   0,995500 &      61249 &       2781 &  45,404823 &  45,200501 &   0,226003 \\\hline
+   35 a 39 &   0,994085 &      73727 &       2121 &  28,768294 &  28,598129 &   0,142991 \\\hline
+   40 a 44 &   0,991560 &      73765 &        504 &   6,832509 &   6,774842 &   0,033874 \\\hline
+   45 a 49 &   0,987030 &      70999 &         46 &   0,647896 &   0,639493 &   0,003197 \\\hline
+   \multicolumn{6}{r|}{\bf $R_0$\quad} & {\bf 0.631053}\\ \cline{7-7}
+\end{tabular}  
+\end{table}
 
 
-5.- Estudiar la fecundidad de la Provincia en el año 2015. Calculando las diversas medidas que se han dado en clase, así como, las diversas tasas de reproducción. (Utilizar la tabla de mortalidad del punto anterior y datos de cifras de la población)
 
-6.- Hacer una proyección de la población de la Provincia al 1 de enero de 2020 suponiendo que no ha habido migraciones y que las condiciones de mortalidad y fecundidad son las obtenidas anteriormente. Población de partida: cifras de la población actual.
+{\bf Proyección de Población}:Se realiza la proyección de la población de 2015 a enero de 2020, utilizando datos de población, condiciones de fecundidad y probabilidades de transición calculadas anteriormente.
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}\hline
 
+    Edad       & Población 2015 & $Z_x$ & Población 2020 \\\hline
+Nacimientos &     \bf {7.768}  &   0,996984 &            \\\hline
+menos de 1 &      8.209 &   0,996994 &   7.744 \\\hline
+     1 a 4 &     35.682 &    0,99978 &    8.184 \\\hline
+     5 a 9 &     50.463 &    0,99969 &   35.674 \\\hline
+   10 a 14 &     47.851 &    0,99907 &   50.447 \\\hline
+   15 a 19 &     44.480 &    0,99858 &   47.806 \\ \hline
+   20 a 24 &     47.148 &    0,99857 &   44.416 \\\hline
+  25 a 29  &     51.985 &    0,99798 &   47.080 \\\hline
+   30 a 34 &     63.813 &    0,99721 &   51.880 \\\hline
+   35 a 39 &     79.194 &    0,99514 &   63.635 \\\hline
+   40 a 44 &     78.038 &    0,99081 &   78.808 \\\hline
+   45 a 49 &     72.878 &    0,98431 &   77.321 \\\hline
+   50 a 54 &     67.128 &    0,97535 &   71.735 \\\hline
+   55 a 59 &     57.401 &    0,96083 &   65.473 \\\hline
+   60 a 64 &     49.958 &    0,94064 &   55.153 \\\hline
+   65 a 69 &     50.189 &    0,91446 &   46.992 \\\hline
+   70 a 74 &     42.842 &    0,86326 &   45.896 \\\hline
+   75 a 79 &     30.995 &    0,77429 &   36.984 \\\hline  
+   80 a 84 &     22.398 &    0,52610 &    23.999 \\\hline
+  85 y mas &     15.402 &            &    19.886 \\\hline
+     TOTAL &    916.054 &            &    871.374 \\\hline
+\end{tabular}  
+\caption{Proyección de la población masculina de la provincia de Alicante de 2015 a enero de 2020}
+\end{table}
 
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}\hline
+      Edad & Población 2015 & $Z_x$ & Población 2020 \\\hline
+Nacimiento &     \bf{7.257}  &    0,99832 &            \\\hline
+menos de 1 &      7.829 &   0,997952 &      7.245 \\\hline
+     1 a 4 &     33.253 &    0,99952 &      7.813 \\\hline
+     5 a 9 &     47.405 &    0,99989 &     33.237 \\\hline
+   10 a 14 &     44.445 &    0,99971 &     47.400 \\\hline
+   15 a 19 &     42.056 &    0,99965 &     44.432 \\\hline
+   20 a 24 &     45.067 &    0,99958 &     42.041 \\\hline
+  25 a 29  &     51.500 &    0,99918 &     45.048 \\\hline
+   30 a 34 &     62.717 &    0,99858 &     51.458 \\\hline
+   35 a 39 &     74.128 &    0,99746 &     62.628 \\\hline
+   40 a 44 &     73.442 &    0,99543 &     73.940 \\\hline
+   45 a 49 &     70.654 &    0,99181 &     73.106 \\\hline
+   50 a 54 &     66.465 &    0,98618 &     70.076 \\\hline
+   55 a 59 &     59.770 &    0,98061 &     65.546 \\\hline
+   60 a 64 &     53.523 &    0,97366 &     58.611 \\\hline
+   65 a 69 &     54.608 &    0,96099 &     52.113 \\\hline
+   70 a 74 &     46.260 &    0,93014 &     52.478 \\\hline
+   75 a 79 &     35.384 &    0,85711 &     43.028 \\\hline
+   80 a 84 &     29.674 &    0,56277 &     30.328 \\\hline
+  85 y mas &     27.937 &            &     32.421 \\\hline
+     TOTAL &    926.117 &            &    885.705 \\\hline
+\end{tabular}
+\caption{Proyección de la población femenina de la provincia de Alicante de 2015 a enero de 2020}
+ \end{table}
+En las proyecciones de población se observa que se presentará un disminución de 44.680 en la población masculina y de 40.412 en la femenina, generando un disminución de la población total de Alicante de 85.092. Lo cual puede darse por que las tasas espec[ificas de fecundidad no son tan altas para lograr un aumento.
+\\
+\\
+Para culminar el proceso de proyección de la población, se calculan los nacimientos tanto masculinos como femeninos para enero de 2020.
 
-
-
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+      Edad & Inicial &  Final &      Media & Tasa específica & Nacimientos en 5 años \\\hline
+   15 a 19 &      42056 &     44.432 &     43.244 &       9,48 &    409.912 \\\hline
+   20 a 24 &      45067 &     42.041 &     43.554 &      27,30 &  1.189.024 \\\hline
+  25 a 29  &      51500 &     45.048 &     48.274 &      58,20 &  2.809.474 \\\hline
+   30 a 34 &      62717 &     51.458 &     57.087 &      93,60 &  5.343.515 \\\hline
+   35 a 39 &      74128 &     62.628 &     68.378 &      60,26 &  4.120.678 \\\hline
+   40 a 44 &      73442 &     73.940 &     73.691 &      14,56 &  1.072.928 \\\hline
+   45 a 49 &      70654 &     73.106 &     71.880 &       1,10 &     78.969 \\\hline
+\multicolumn{5}{r|}{\bf Total\quad} & {\bf 15.024}\\ \cline{6-6}
+\end{tabular}  
+\caption{Número de nacimientos esperados para proyección de la población de la provincia de Alicante de 2015 a enero de 2020}
+ \end{table}
+De los 15.024 nacimientos que se esperan obtener en 5 años, el 51,7\% representan hombres y el 48,7 \% mujeres por lo cual en las tablas de proyección de población se tienen 7.768 y 7.257 nacimientos de hombres y mujeres respectivamente.
 \end{document} 
