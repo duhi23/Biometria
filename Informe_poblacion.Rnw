@@ -929,5 +929,5 @@ Para culminar el proceso de proyección de la población, se calculan los nacimi
 \end{tabular}  
 \caption{Número de nacimientos esperados para proyección de la población de la provincia de Alicante de 2015 a enero de 2020}
  \end{table}
-De los 15.024 nacimientos que se esperan obtener en 5 años, el 51,7\% representan hombres y el 48,7 \% mujeres por lo cual en las tablas de proyección de población se tienen 7.768 y 7.257 nacimientos de hombres y mujeres respectivamente.
+De los 75.122 nacimientos que se esperan obtener en 5 años, el 51,7\% representan hombres y el 48,7 \% mujeres por lo cual en las tablas de proyección de población se tienen 38.838 y 36.284 nacimientos de hombres y mujeres respectivamente.
 \end{document} 
