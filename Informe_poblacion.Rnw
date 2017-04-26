@@ -918,15 +918,14 @@ Para culminar el proceso de proyección de la población, se calculan los nacimi
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-      Edad & Inicial &  Final &      Media & Tasa específica & Nacimientos en 5 años \\\hline
-   15 a 19 &      42056 &     44.432 &     43.244 &       9,48 &    409.912 \\\hline
-   20 a 24 &      45067 &     42.041 &     43.554 &      27,30 &  1.189.024 \\\hline
-  25 a 29  &      51500 &     45.048 &     48.274 &      58,20 &  2.809.474 \\\hline
-   30 a 34 &      62717 &     51.458 &     57.087 &      93,60 &  5.343.515 \\\hline
-   35 a 39 &      74128 &     62.628 &     68.378 &      60,26 &  4.120.678 \\\hline
-   40 a 44 &      73442 &     73.940 &     73.691 &      14,56 &  1.072.928 \\\hline
-   45 a 49 &      70654 &     73.106 &     71.880 &       1,10 &     78.969 \\\hline
-\multicolumn{5}{r|}{\bf Total\quad} & {\bf 15.024}\\ \cline{6-6}
+   15 a 19 &      42056 &     44.432 &     43.244 &   47,39 &  2.049.559 \\\hline
+   20 a 24 &      45067 &     42.041 &     43.554 &   136,49 &  5.945.119 \\\hline
+  25 a 29  &      51500 &     45.048 &     48.274 &   290,99 & 14.047.370 \\\hline
+   30 a 34 &      62717 &     51.458 &     57.087 &   468,01 & 26.717.574 \\\hline
+   35 a 39 &      74128 &     62.628 &     68.378 &   301,31 & 20.603.388 \\\hline
+   40 a 44 &      73442 &     73.940 &     73.691 &   72,79 &  5.364.639 \\\hline
+   45 a 49 &      70654 &     73.106 &     71.880 &   5,49 &    394.843 \\\hline
+\multicolumn{5}{r|}{\bf Total\quad} & {\bf 75.122}\\ \cline{6-6}
 \end{tabular}  
 \caption{Número de nacimientos esperados para proyección de la población de la provincia de Alicante de 2015 a enero de 2020}
  \end{table}
